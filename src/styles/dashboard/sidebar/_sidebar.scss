@@ -1,0 +1,156 @@
+@import "../variables";
+
+$color-hover:#e2eaec;
+
+$timeTransitionLinkButton: 0.25s;
+
+// layout visible
+$showDesing: false;
+
+// Estilos Sidebar
+
+.container-sidebar{
+    background-color: $bg-sidebar;
+    overflow-y: auto;
+    @include style-design(true, fixed, 200, "SIDEBAR", true, #f1c40f7a, #1abc9c7c);
+}
+
+// Contenedor del usuario
+.container-user{
+    height: $heightContainerUser;
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        content: "";
+        width: 90%;
+        height: 2px;
+        bottom: 0;
+    
+        position: absolute;
+        display: block;
+        background-color: $color-text;
+    }
+
+    @include style-design(true, relative, 100, "USER", false, #e74d3c70, #3498db70);
+}
+
+.container-userPhoto{
+    flex: 0 0 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include style-design(true, relative, 200, "PHOTO", false, #f1c40f7a, #1abc9c7c);
+}
+
+.userPhoto{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include style-design(true, relative, 200, "NAME", false, #f1290f7a, #1abc9c7c);
+}
+
+.container-userInfo{
+    height: 100%;
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    @include style-design(true, relative, 200, "NAME", false, #f1290f7a, #1abc9c7c);
+}
+
+.userInfo{
+    display: block;
+    margin: auto 0.5em;
+    color: $color-text;
+    font-family: 'Poor Story', cursive;
+    font-size: 1.4em;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: color $timeTransitionLinkButton;
+
+    &:hover{
+        color: $color-hover;
+    }
+
+    @include style-design(true, relative, 200, "NAME", false, #f1290f7a, #1abc9c7c);
+}
+
+// Lista de enlaces
+.container-linkList{
+    padding: 1em 0;
+
+    @include style-design(true, relative, 100, "LINKS", true, #e74d3c70, #3498db70);
+}
+
+.container-linkItem{
+    display: block;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    @include style-design(true, relative, 200, "LINK", false, #f1290f7a, #1abc9c7c);
+}
+
+.linkItem{
+    height: 100%;
+    margin: 0 0.5em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    transition: background-color $timeTransitionLinkButton;
+
+    &:hover{
+        background-color: $color-hover;
+        cursor: pointer;
+
+        .iconLink, .cartelLink{
+            color: $bg-sidebar;
+        }
+    }
+
+    @include style-design(true, relative, 200, "BUTTON", false, #f1c40f7a, #1abc9c7c);
+
+}
+
+.iconLink, .cartelLink{
+    color: $color-text;
+    transition: color $timeTransitionLinkButton;
+}
+
+.iconLink{
+    flex: 0 0 3em;
+    display: block;
+    height: 100%;
+
+    &::before{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+    }
+
+    @include style-design(true, relative, 200, "ICON", false, #0f44f17a, #1abc9c7c);
+
+}
+
+.cartelLink{
+    display: block;
+    padding-left: 0.5em;
+    font-family: 'Strait', sans-serif;
+    font-size: 1.3em;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @include style-design(true, relative, 200, "LINK", false, #f1290f7a, #1abc9c7c);
+}

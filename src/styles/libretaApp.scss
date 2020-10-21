@@ -1,0 +1,72 @@
+$bgcolor: #bdc3c7;
+$bgcolor-table: white;
+$lineColor: #f1c40f;
+$color-title: #3498db;
+$bg-rowPar: #ecf0f1;
+$bg-rowImpar: white;
+$color-text: #7f8c8d;
+$grid-proporcion: 2fr 1fr 1.2fr;
+
+@import "table/table.scss";
+@import "button/button.scss";
+@import "modal/modal.scss";
+@import "form/form.scss";
+
+.libreta{
+    // Variables
+    --bgcolor: rgb(224, 224, 224);
+    --bgcolor: white;
+    --border-card: rgba(0, 0, 0, 0.15);
+
+    // Layout
+    min-width: 0;
+    max-width: 45em;
+    width: 45em;
+
+    // Theme default
+    background-color: var(--bgcolor);
+    border-radius: 0.35em;
+    border: 1px solid var(--border-card);
+    box-shadow: 0 0 1px rgba(0,0,0,0.125), 0 1px 3px rgba(0,0,0,0.2);
+
+    &__content{
+        // Layout
+        margin: 1em;
+    }
+
+    &__action{
+        //layout 
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1em;
+
+        .button{
+            width: 150px;
+            height: auto;
+            margin: 0.25em 0.5em;
+        }
+    }
+
+    .buttonIco{
+        color: #1abc9c;
+        margin: 0.2em;
+
+        &--green{
+            color: #2ecc71;
+        }
+
+        &--yellow{
+            color: #f1c40f;
+        }
+
+        &--red{
+            color: #e74c3c;
+        }
+
+        &--orange{
+            color: #e67e22;
+        }
+
+    }
+}

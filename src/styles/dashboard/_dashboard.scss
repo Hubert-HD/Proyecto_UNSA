@@ -1,0 +1,85 @@
+@import "variables";
+// Estilos Dashboard
+// layout visible
+$showDesing: false;
+
+// Sidebar
+$widthSidebar: 18em;
+$widthMinSidebar: 4em;
+$widthMaxSidebar: 80%;
+$timeTransitionSidebar: 0.5s;
+
+.container-dashboard{
+    width: 100%;
+    @include style-design(false, relative, 1, "DASHBOARD", false, #ffffff, rgba(0, 0, 0, 0.7));
+}
+
+.container-sidebar{
+    max-width: $widthMaxSidebar;
+    width: $widthSidebar;
+    min-width: $widthMinSidebar;
+    height: 100%;
+    position: fixed;
+    transition: width $timeTransitionSidebar ease;
+
+    &:hover{
+        width: $widthSidebar;
+    }
+
+    @include style-design(true, fixed, 200, "SIDEBAR", true, #f1c40f7a, #1abc9c7c);
+}
+
+.container-content{
+    margin-left: $widthSidebar;
+    min-height: 100vh;
+    transition: margin-left $timeTransitionSidebar ease;
+
+    @include style-design(true, relative, 100, "CONTENT", false, #e74d3c70, #3498db70);
+}
+
+// Estados del sidebar
+.sidebar-expanded{
+    width: $widthSidebar;
+}
+
+.sidebar-contracted{
+    width: $widthMinSidebar;
+}
+
+.content-expanded{
+    margin-left: $widthMinSidebar;
+}
+
+.content-contracted{
+    margin-left: $widthSidebar;
+}
+
+// Media querys
+@media only screen and (max-width: 600px) {
+
+    .container-sidebar{
+        min-width: 0;
+        width: 0;
+    }
+
+    .container-content{
+        margin-left: 0;
+    }
+
+    .sidebar-expanded{
+        width: $widthSidebar;
+    }
+
+    .sidebar-contracted{
+        width: 0;
+    }
+
+    .content-expanded,
+    .content-contracted{
+        margin-left: 0;
+    }
+}
+ 
+// Estilos de componentes
+@import "sidebar/sidebar";
+@import "content/content";

@@ -1,0 +1,59 @@
+.button{
+    // layout 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+    width: 7.5em;
+    height: 2.5em;
+    
+    // theme
+    font-size: 1.3rem;
+    background-color: #3498db;
+    color: #f0f0f0;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    word-break: break-word;
+    overflow: hidden;
+    transition: all 0.2s;
+
+    &__ico{
+        margin: 0.35em;
+    }
+
+    &__text{
+        margin: 0.35em;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Poor Story', cursive;
+    }
+
+    &:hover{
+        background-color: #1d85ca;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+    }  
+
+    &--green{
+        background-color: #27ae60;
+        &:hover{
+            background-color: #209450;
+        } 
+    }
+
+    &--yellow{
+        background-color: #f39c12;
+        &:hover{
+            background-color: #ee8b09;
+        } 
+    }
+
+    &--red{
+        background-color: #df4736;
+        &:hover{
+            background-color: #d12f1c;
+        } 
+    }
+}

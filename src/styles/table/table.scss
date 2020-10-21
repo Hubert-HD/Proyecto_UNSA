@@ -1,0 +1,211 @@
+$bgcolor: #bdc3c7;
+$bgcolor-table: white;
+$lineColor: #f1c40f;
+$color-title: #3498db;
+$bg-rowPar: #ecf0f1;
+$bg-rowImpar: white;
+$color-text: #7f8c8d;
+$grid-proporcion: 2fr 1fr 1.2fr;
+
+ .tableList-container{
+    // Variables
+    --bgcolor: rgb(224, 224, 224);
+    --bgcolor: white;
+    --border-card: rgba(0, 0, 0, 0.15);
+    
+    // Layout
+    padding: 1em;
+
+    // Theme default
+    background-color: var(--bgcolor);
+    border-radius: 0.35em;
+    border: 1px solid var(--border-card);
+    box-shadow: 0 0 1px rgba(0,0,0,0.125), 0 1px 3px rgba(0,0,0,0.2);
+
+    .tableList{
+        // Variables
+        --color-line: #f1c40f;
+        --color-title: #3498db;
+        --color-text: #7f8c8d;
+    
+        // Layout
+        display: block;
+    
+        // Theme default
+        overflow-x: auto; 
+    
+        &__head,
+        &__body,
+        &__foot{
+            // Layout
+            display: block;
+            min-width: 18em;
+            margin: 0.5em 0;
+        }
+    
+        &__row{
+            // Layout
+            display: grid;
+            grid-template-columns: $grid-proporcion;
+            grid-auto-columns: 0.75fr;
+        
+            &--title{
+                // Variables
+                --bgcolor: white;
+                --color: var(--color-title);
+    
+                // Layout
+                padding: 0.35em 0;
+    
+                // Theme default
+                background-color: var(--bgcolor);
+                border: 2px solid var(--color-line);
+                border-radius: 0.5em;
+                
+                color: var(--color);
+                font-size: 1.2em;
+                font-family: 'Strait', sans-serif;
+                word-break: break-word;
+    
+                :not(:first-child):not(:last-child){
+                    border-right: 1px solid var(--color-line);
+                    border-left: 1px solid var(--color-line);
+                }
+            }
+        
+            &--subtitle{
+                // Variables
+                --bgcolor: var(--color-title);
+                --color: white;
+    
+                // Layout
+                margin: 0 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                // Theme default
+                background-color: var(--bgcolor);
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+    
+                color: var(--color);
+                font-family: 'Poor Story', cursive;
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+        
+            &--data{
+                // Variables
+                --bg-rowPar: #ecf0f1;
+                --bg-rowImpar: white;
+                --color: var(--color-text);
+    
+                // Layout
+                margin: 0 2px;
+                padding: 0.25em 0;
+    
+                // Theme default
+                border-radius: 5px;
+    
+                color: var(--color);
+                font-family: 'Poor Story', cursive;
+                font-weight: bold;
+                font-size: 1.35em;
+                word-break: break-word;
+    
+                // Theme default Row Impar
+                &:nth-child(odd){
+                    background-color: var(--bg-rowImpar);
+    
+                    // Theme default Column Middle
+                    :not(:first-child):not(:last-child){
+                        border-right: 1px solid var(--bg-rowPar);
+                        border-left: 1px solid var(--bg-rowPar);
+                    }
+                }
+    
+                // Theme default Row Par    
+                &:nth-child(even){
+                    background-color: var(--bg-rowPar);
+    
+                    // Theme default Column Middle
+                    :not(:first-child):not(:last-child){
+                        border-right: 1px solid var(--bg-rowImpar);
+                        border-left: 1px solid var(--bg-rowImpar);
+                    }
+                }
+        
+                // Effect
+                &:hover{
+                    // Theme default
+                    background-color: var(--color-line);
+    
+                    .tableList__colum{
+                        // Theme default
+                        color: var(--color-title);
+                    }
+                }
+            }
+        
+            &--result{
+                // Variables
+                --color: var(--color-text);
+    
+                // Layout
+                margin: 0 2px;
+                padding: 0.25em 0;
+    
+                // Theme default
+                background-color: white;
+                border-top: 2px solid var(--color-line);
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+    
+                color: var(--color);
+                font-family: 'Poor Story', cursive;
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-align: center;
+                word-break: break-word;
+    
+                :not(:first-child):not(:last-child){
+                    border-right: 1px solid #ecf0f1;
+                    border-left: 1px solid #ecf0f1;
+                }
+    
+                :first-child{
+                    font-family: 'Strait', sans-serif;
+                    color: var(--color-title);
+                }
+            }
+        }
+    
+        &__colum{
+            // Layout
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            &--text{
+                justify-content: flex-start;
+                padding: 0 0.7em;
+                text-align: left;
+            }
+    
+            &--number{
+                padding: 0 0.25em;
+                text-align: center;
+            }
+    
+            &--action{
+                grid-column: 4 / 5;
+                padding: 0 0.25em;
+                text-align: center;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+

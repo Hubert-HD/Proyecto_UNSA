@@ -1,0 +1,42 @@
+/* Estilos basicos */
+
+// Vsriables
+$bg-body: #bdc3c7;
+$color-h1: #2c3e50;
+$color-p: #2c3e50;
+$color-a: #2c3e50;
+
+// Estilos  
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+} 
+
+body{
+    background-color: $bg-body;
+}
+
+ul{
+    list-style: none;
+}
+
+h1{
+    color: $color-h1;
+}
+
+p{
+    color: $color-p;
+}
+
+a{
+    text-decoration: none;
+    color: $color-a;
+}
+
+// Importar estilos dashboard
+@import "dashboard/dashboard";

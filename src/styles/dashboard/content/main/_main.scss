@@ -1,0 +1,10 @@
+@import "../../variables";
+
+$showDesing: false;
+
+.container-main{
+    background-color: $bg-main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

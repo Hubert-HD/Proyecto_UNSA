@@ -1,0 +1,91 @@
+@import "../../variables";
+
+$showDesing: false;
+
+.container-header{
+    max-height: $heightHeader;
+    height: $heightHeader;
+    min-width: 13em;
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg-header;
+
+    @include style-design(true, relative, 200, "HEADER", false, #f1c40f7a, #1abc9c7c);
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+
+    @include style-design(true, relative, 200, "LOGO", false, #f10f0f7a, #1abc707c);
+}
+
+.logoPhoto{
+    margin-left: 1em;
+    width: 6em;
+    object-fit: cover;
+
+    @include style-design(true, relative, 200, "PHOTO", false, #4b0ff17a, #1a96bc7c);
+}
+
+.logoInfo{
+    width: 5.5em;
+    color: $bg-sidebar;
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Strait', sans-serif;
+    font-size: 1.8em;
+
+    @include style-design(true, relative, 200, "INFO", false, #4b0ff17a, #1a96bc7c);
+}
+
+.container-menuButton{
+    width: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include style-design(true, relative, 200, "MENU", false, #4b0ff17a, #1a96bc7c);
+}
+
+.menuButton{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: $bg-sidebar;
+    
+    &:active{
+        background-color: $color-text;
+        .icono{
+            color: $bg-sidebar;
+        }
+    }
+
+}
+
+.icono{
+    font-size: 1.5em;
+    color: $color-text;
+}
+
+// Media querys
+
+// 0 hasta 480
+@media only screen and (max-width: 480px) {
+    html{
+        font-size: 15px;
+    }
+
+    .logoInfo{
+        display: none;
+    }
+}
+
+// 0 hasta 320
+@media only screen and (max-width: 320px) {
+    html{
+        font-size: 14px;
+    }
+}
+
+
+

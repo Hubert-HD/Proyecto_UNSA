@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+
+  <!-- Estilos css -->
+  <link rel="stylesheet" href="../util/box.css">
+  <link rel="stylesheet" href="table.css">
+
+  <!-- Icons Font awesome -->
+  <link rel="stylesheet" href="../util/icons/css/all.min.css">
+
+  <!-- Font-google style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Strait&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <h1 class="title">Table</h1>
+
+  <div class="box">
+
+    <!-- ContainerTabla -->
+    <div class="tableList-container">
+
+      <!-- Tabla -->
+      <table class="tableList" id="notasTabla">
+        <!-- Head Tabla -->
+        <thead class="tableList__head">
+          <tr class="tableList__row tableList__row--title">
+            <th class="tableList__colum tableList__colum--center">NOMBRE DEL CURSO</th>
+            <th class="tableList__colum tableList__colum--center">NOTA</th>
+            <th class="tableList__colum tableList__colum--center">N° CREDITOS</th>
+          </tr>
+        </thead>
+        <!-- Body Tabla -->
+        <tbody class="tableList__body" id="data_table">
+        </tbody>
+        <!-- Foot Tabla -->
+        <tfoot class="tableList__foot">
+          <tr class="tableList__row tableList__row--result">
+            <td class="tableList__colum tableList__colum--center">PROMEDIO</td>
+            <td class="tableList__colum tableList__colum--center" id="promedioBox">0</td>
+            <td class="tableList__colum tableList__colum--center" id="creditoTotalBox">0 creditos</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+
+  </div>
+
+  <a class="btn" href="../index.html">Inicio</a>
+
+  <script src="../selection/selection.js"></script>
+  <script src="form.js"></script>
+
+
+
+  <!-- JS -->
+  <!-- <script src="js/sidebarButton.js"></script> -->
+  <script src="table.js"></script>
+
+</body>
+
+</html>

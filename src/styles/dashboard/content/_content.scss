@@ -1,0 +1,30 @@
+$showDesing: false;
+
+@import "../variables";
+
+.container-content{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    @include style-design(true, relative, 100, "CONTENT", false, #e74d3c70, #3498db70);
+}
+
+.container-header{
+    flex: 0 0 $heightHeader;
+    @include style-design(true, relative, 200, "HEADER", false, #f1c40f7a, #1abc9c7c);
+}
+
+.container-main{
+    flex: 1 0 0;
+    @include style-design(true, relative, 100, "MAIN", false, #e74d3c70, #3498db70);
+}
+
+.container-footer{
+    flex: 0 0 $heightFooter;
+    @include style-design(true, relative, 100, "FOOTER", false, #f1c40f7a, #1abc9c7c);
+}
+
+// Importar componentes
+@import "header/header";
+@import "main/main";
+@import "footer/footer";

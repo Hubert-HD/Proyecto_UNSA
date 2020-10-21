@@ -1,0 +1,89 @@
+[
+    {
+        "ciclo": "2019-I",
+        "cursos":
+        [
+            {
+                "curso": "Matemática Básica",
+                "nota": "19",
+                "credito": "4"
+            },
+            {
+                "curso": "Fundamentos de la Programación 1",
+                "nota": "19",
+                "credito": "4"
+            },
+            {
+                "curso": "Estructuras Discretas 1",
+                "nota": "15",
+                "credito": "4"
+            },
+            {
+                "curso": "Razonamiento Matemático",
+                "nota": "19",
+                "credito": "4"
+            },
+            {
+                "curso": "Introducción a la computación",
+                "nota": "15",
+                "credito": "4"
+            }
+        ]
+            
+    },
+    {
+        "ciclo": "2019-II",
+        "cursos":
+        [
+            {
+                "curso": "Cálculo en una variable",
+                "nota": "18",
+                "credito": "4"
+            },
+            {
+                "curso": "Estructuras discretas 2",
+                "nota": "15",
+                "credito": "4"
+            },
+            {
+                "curso": "Programación Web",
+                "nota": "16",
+                "credito": "4"
+            },
+            {
+                "curso": "Fundamentos de la Programación 2",
+                "nota": "15",
+                "credito": "4"
+            },
+            {
+                "curso": "Realidad Nacional",
+                "nota": "17",
+                "credito": "2"
+            }
+        ]
+            
+    },
+    {
+        "ciclo": "2020-I",
+        "cursos":
+        [
+            {
+                "curso": "Cálculo en varias variables",
+                "nota": "15",
+                "credito": "4"
+            },
+            {
+                "curso": "Estructura de datos y algoritmos",
+                "nota": "13",
+                "credito": "4"
+            },
+            {
+                "curso": "Redaccion de Articulos e Infomes de Investigación",
+                "nota": "11",
+                "credito": "3"
+            }
+        ]
+            
+    }
+    
+]

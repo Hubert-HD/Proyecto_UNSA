@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Box</title>
+
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="../util/box.css">
+    <link rel="stylesheet" href="form.css">
+
+    <!-- Icons Font awesome -->
+    <link rel="stylesheet" href="../util/icons/css/all.min.css">
+
+    <!-- Font-google style -->
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Strait&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <h1 class="title">Form</h1>
+
+    <div class="box">
+
+        <div class="form-course">
+
+          <h1 class="form-course__title">Añadir curso</h1>
+
+          <form class="form-course__form" id="addCourse">
+
+            <input class="form-course__input" type="text" name="curso" placeholder="Nombre del curso" autocomplete="off">
+                  
+            <input class="form-course__input" type="number" name="nota" placeholder="Nota" min="0" max="20" autocomplete="off">
+            
+            <input class="form-course__input" type="number" name="credito" placeholder="Creditos" min="0" autocomplete="off">
+            <!-- Selection -->
+            <div class="selection">
+              <div class="selecBox" tabindex="0">
+                <div class="selecBox__content selecBox__content--void">Ciclo</div>
+                <i class="selecBox__ico selecBox__ico--down fas fa-angle-down"></i>
+              </div>
+              <div class="optionList optionList--hidden">
+                <div class="optionList__option">2017-I</div>
+                <div class="optionList__option">2017-II</div>
+                <div class="optionList__option">2018-I</div>
+                <div class="optionList__option">2018-II</div>
+                <div class="optionList__option">2019-I</div>
+                <div class="optionList__option">2019-II</div>
+                <div class="optionList__option">2020-I</div>
+                <div class="optionList__option">2020-II</div>
+              </div>
+              <input class="selection__input" type="hidden" name="ciclo" value="">
+            </div>
+          </form>
+
+          <!-- Button List -->
+          <div class="form-course__actions">
+
+            <!-- Add-Button -->
+            <a class="button button--green" id="enviar">
+              <i class="button__ico fas fa-check"></i>
+              <span class="button__text">CONFIRMAR</span>
+            </a>
+
+            <!-- Edit-Button -->
+            <a class="button button--red" id="closeButton">
+              <i class="button__ico fas fa-times-circle"></i>
+              <span class="button__text">CANCELAR</span>
+            </a>
+
+          </div>
+
+        </div>
+        
+    </div>
+
+    <a class="btn" href="../index.html">Inicio</a>
+
+    <script src="../selection/selection.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>

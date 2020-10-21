@@ -1,0 +1,175 @@
+.tableList-container {
+  --bgcolor: rgb(224, 224, 224);
+  --bgcolor: white;
+  --border-card: rgba(0, 0, 0, 0.15);
+  padding: 1em;
+  background-color: var(--bgcolor);
+  border-radius: 0.35em;
+  border: 1px solid var(--border-card);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tableList-container .tableList {
+  --color-line: #f1c40f;
+  --color-title: #3498db;
+  --color-text: #7f8c8d;
+  display: block;
+  overflow-x: auto;
+}
+
+.tableList-container .tableList__head, .tableList-container .tableList__body, .tableList-container .tableList__foot {
+  display: block;
+  min-width: 18em;
+  margin: 0.5em 0;
+}
+
+.tableList-container .tableList__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1.2fr;
+      grid-template-columns: 2fr 1fr 1.2fr;
+  grid-auto-columns: 0.75fr;
+}
+
+.tableList-container .tableList__row--title {
+  --bgcolor: white;
+  --color: var(--color-title);
+  padding: 0.35em 0;
+  background-color: var(--bgcolor);
+  border: 2px solid var(--color-line);
+  border-radius: 0.5em;
+  color: var(--color);
+  font-size: 1.2em;
+  font-family: 'Strait', sans-serif;
+  word-break: break-word;
+}
+
+.tableList-container .tableList__row--title :not(:first-child):not(:last-child) {
+  border-right: 1px solid var(--color-line);
+  border-left: 1px solid var(--color-line);
+}
+
+.tableList-container .tableList__row--subtitle {
+  --bgcolor: var(--color-title);
+  --color: white;
+  margin: 0 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--bgcolor);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: var(--color);
+  font-family: 'Poor Story', cursive;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.tableList-container .tableList__row--data {
+  --bg-rowPar: #ecf0f1;
+  --bg-rowImpar: white;
+  --color: var(--color-text);
+  margin: 0 2px;
+  padding: 0.25em 0;
+  border-radius: 5px;
+  color: var(--color);
+  font-family: 'Poor Story', cursive;
+  font-weight: bold;
+  font-size: 1.35em;
+  word-break: break-word;
+}
+
+.tableList-container .tableList__row--data:nth-child(odd) {
+  background-color: var(--bg-rowImpar);
+}
+
+.tableList-container .tableList__row--data:nth-child(odd) :not(:first-child):not(:last-child) {
+  border-right: 1px solid var(--bg-rowPar);
+  border-left: 1px solid var(--bg-rowPar);
+}
+
+.tableList-container .tableList__row--data:nth-child(even) {
+  background-color: var(--bg-rowPar);
+}
+
+.tableList-container .tableList__row--data:nth-child(even) :not(:first-child):not(:last-child) {
+  border-right: 1px solid var(--bg-rowImpar);
+  border-left: 1px solid var(--bg-rowImpar);
+}
+
+.tableList-container .tableList__row--data:hover {
+  background-color: var(--color-line);
+}
+
+.tableList-container .tableList__row--data:hover .tableList__colum {
+  color: var(--color-title);
+}
+
+.tableList-container .tableList__row--result {
+  --color: var(--color-text);
+  margin: 0 2px;
+  padding: 0.25em 0;
+  background-color: white;
+  border-top: 2px solid var(--color-line);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: var(--color);
+  font-family: 'Poor Story', cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  word-break: break-word;
+}
+
+.tableList-container .tableList__row--result :not(:first-child):not(:last-child) {
+  border-right: 1px solid #ecf0f1;
+  border-left: 1px solid #ecf0f1;
+}
+
+.tableList-container .tableList__row--result :first-child {
+  font-family: 'Strait', sans-serif;
+  color: var(--color-title);
+}
+
+.tableList-container .tableList__colum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tableList-container .tableList__colum--text {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 0.7em;
+  text-align: left;
+}
+
+.tableList-container .tableList__colum--number {
+  padding: 0 0.25em;
+  text-align: center;
+}
+
+.tableList-container .tableList__colum--action {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  padding: 0 0.25em;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=table.css.map */

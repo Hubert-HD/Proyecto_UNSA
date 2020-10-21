@@ -1,0 +1,373 @@
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 7.5em;
+  height: 2.5em;
+  font-size: 1.3rem;
+  background-color: #3498db;
+  color: #f0f0f0;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  word-break: break-word;
+  overflow: hidden;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.button__ico {
+  margin: 0.35em;
+}
+
+.button__text {
+  margin: 0.35em;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Poor Story', cursive;
+}
+
+.button:hover {
+  background-color: #1d85ca;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.button--green {
+  background-color: #27ae60;
+}
+
+.button--green:hover {
+  background-color: #209450;
+}
+
+.button--yellow {
+  background-color: #f39c12;
+}
+
+.button--yellow:hover {
+  background-color: #ee8b09;
+}
+
+.button--red {
+  background-color: #df4736;
+}
+
+.button--red:hover {
+  background-color: #d12f1c;
+}
+
+.selection {
+  position: relative;
+  width: 10em;
+  height: 2em;
+}
+
+.selection .selecBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.selection .selecBox__content {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-right: 1rem;
+}
+
+.selection .selecBox__content--void {
+  color: #7f8c8d;
+}
+
+.selection .selecBox__content--full {
+  color: black;
+}
+
+.selection .selecBox__ico {
+  display: block;
+  position: absolute;
+  right: 0;
+  padding: 0.5em;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.selection .selecBox__ico--up {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.selection .selecBox__ico--down {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.selection .optionList {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  overflow: auto;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.selection .optionList--hidden {
+  height: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.selection .optionList--show {
+  height: 8em;
+}
+
+.selection .optionList__option {
+  padding: 0.25em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.selection .optionList__option:not(:first-child) {
+  border-top: 1px solid #bdc3c7;
+}
+
+.selection .optionList__option:hover {
+  background-color: #7bcaff;
+}
+
+.selection {
+  width: 10em;
+  height: 2em;
+}
+
+.selection .selecBox {
+  border-radius: 1rem;
+  border: 2px solid #f1c40f;
+}
+
+.selection .selecBox:focus {
+  border: 2px solid #f39c12;
+  -webkit-box-shadow: 0 0 5px #f39c12;
+          box-shadow: 0 0 5px #f39c12;
+  outline: none;
+}
+
+.selection .selecBox__content {
+  font-family: 'Poor Story', cursive;
+  font-size: 1.4em;
+}
+
+.selection .optionList {
+  margin-top: 0.25em;
+  border-radius: 0.5em;
+  border: 2px solid #f1c40f;
+}
+
+.selection .optionList--hidden {
+  height: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.selection .optionList::-webkit-scrollbar {
+  display: none;
+}
+
+.selection .optionList__option {
+  padding: 0.25rem 0.5rem;
+  font-family: 'Poor Story', cursive;
+  font-size: 1.4em;
+}
+
+.selection .optionList__option:hover {
+  background-color: #f1c40f;
+}
+
+.selection .optionList__option:focus {
+  background-color: #f1c40f;
+  outline: none;
+}
+
+.form-course {
+  width: 90%;
+  max-width: 35em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.form-course__title {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.25em;
+  border-bottom: 2px solid #f1c40f;
+  text-align: center;
+  font-family: 'Strait', sans-serif;
+  color: #3498db;
+}
+
+.form-course__form {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  padding: 1em 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-course__input {
+  display: block;
+  background-color: white;
+  border-radius: 1rem;
+  border: 2px solid #f1c40f;
+  padding: 0 1rem;
+  min-width: 0;
+  height: 50px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-family: 'Poor Story', cursive;
+  text-align: center;
+}
+
+.form-course__input::-webkit-input-placeholder {
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+.form-course__input:-ms-input-placeholder {
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+.form-course__input::-ms-input-placeholder {
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+.form-course__input::placeholder {
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+.form-course__input:focus {
+  border: 2px solid #f39c12;
+  -webkit-box-shadow: 0 0 5px #f39c12;
+          box-shadow: 0 0 5px #f39c12;
+  outline: none;
+}
+
+.form-course__input:first-child {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+}
+
+.form-course__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form-course__input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-course .selection {
+  width: auto;
+  height: 50px;
+  font-size: 1.1em;
+}
+
+.form-course__actions {
+  min-width: 0;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1em;
+}
+
+.form-course__actions .button {
+  margin: 0.25em 1em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 500px) {
+  .form-course__form {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .form-course__input:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+}
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,48 @@
+$bgcolor: #bdc3c7;
+$bgcolor-table: white;
+$lineColor: #f1c40f;
+$color-title: #3498db;
+$bg-rowPar: #ecf0f1;
+$bg-rowImpar: white;
+$color-text: #7f8c8d;
+$grid-proporcion: 2fr 1fr 1.2fr;
+
+@import "../button/button.scss";
+
+.button{
+    font-size: 24px;
+    width: 210px;
+}
+
+.modal{
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    
+    background-color: rgba(0,0,0,0.4);
+
+    &--hidden{
+        display: none;
+    }
+    
+    &--show{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__close{
+        color: #e74c3c;
+        position: absolute;
+        margin: 0.25rem;
+        top: 0;
+        right: 0;
+        font-size: 2em;
+    }
+}
+

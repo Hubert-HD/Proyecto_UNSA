@@ -1,0 +1,55 @@
+// Theme 1 
+
+@import "selection.scss";
+
+.selection{
+    width: 10em;
+    height: 2em;
+
+    .selecBox{
+        border-radius: 1rem;
+        border: 2px solid #f1c40f;
+
+        &:focus{
+            border: 2px solid #f39c12;
+            box-shadow: 0 0 5px #f39c12;
+            outline: none;
+        }
+        
+        &__content{
+            font-family: 'Poor Story', cursive;
+            font-size: 1.4em; 
+        }    
+    }
+
+    .optionList{
+        margin-top: 0.25em;
+        border-radius: 0.5em;
+        border: 2px solid #f1c40f;
+        
+        &--hidden{
+            height: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    
+        &__option{
+            padding: 0.25rem 0.5rem;
+            font-family: 'Poor Story', cursive;
+            font-size: 1.4em;
+
+            &:hover{
+                background-color: #f1c40f;
+            }
+
+            &:focus{
+                background-color: #f1c40f;
+                outline: none;
+            }
+        }
+    }
+}

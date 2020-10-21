@@ -1,0 +1,52 @@
+@import "../../variables";
+
+$showDesing: false;
+
+$color-text: #bdc3c7;
+
+.container-footer{
+    min-height: $heightFooter;
+    height: $heightFooter;
+    padding: 0.25em 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-footer;
+
+    @include style-design(true, relative, 100, "FOOTER", false, #f1c40f7a, #1abc9c7c);
+}
+
+.container-redes{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include style-design(true, relative, 200, "REDES", false, #f10f0f7a, #1abc707c);
+}
+
+.iconRed{
+    display: block;
+    margin: 0 0.5em;
+    font-size: 1.5em;
+    color: $color-text;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.container-copyright{
+
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include style-design(true, relative, 200, "COPYRIGHT", false, #4b0ff17a, #1a96bc7c);
+}
+
+.copyright{
+    font-weight: bold;
+    font-family: 'Strait', sans-serif;
+    color: $color-text;
+}
