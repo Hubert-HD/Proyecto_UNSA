@@ -11,13 +11,13 @@ import {UserContext} from "../context/UserContext";
 
 const App = () => {  
 
-    const {user} = useContext(UserContext);
+    const [state] = useContext(UserContext);
 
     return (
         <Switch>
             <Route path="/login" component={ Login } />
-            <Route path="/logout" component={ user ? Logout : NotFound} />
-            <Route path="/" component={ user ? Dashboard : Public } />
+            <Route path="/logout" component={ state.user ? Logout : NotFound} />
+            <Route path="/" component={ state.user ? Dashboard : Public } />
             <Route component={ NotFound } />
         </Switch>
     );

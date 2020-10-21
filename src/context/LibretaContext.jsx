@@ -1,24 +1,33 @@
 import React, { useReducer } from "react";
-import { ACTIVATE_MODAL, DESACTIVATE_MODAL } from "./actions";
+import { TOOGLE_MODAL, ACTIVATE_EDIT } from "./actions";
 
 const LibretaContext = React.createContext();
 
 const initialState = {
-    "modal": false
+    "modalAdd": false,
+    "modalEdit": false,
+    "modalDelete": false,
+    "editActivate": false,
+    "data": {
+        curso: "",
+        nota: "",
+        credito: ""
+    }
 };
 
-const libretaReducer = (state, {type, course}) =>{
-    if(type === ACTIVATE_MODAL){
+const libretaReducer = (state, {type, modal, data}) =>{
+    if(type === TOOGLE_MODAL){
         return {
-            modal: true
+            ...state, [modal] : !state[modal],
         }
     }
 
-    if(type === DESACTIVATE_MODAL){
+    if(type == ACTIVATE_EDIT){
         return {
-            modal: false
+            ...state, editActivate : !state.editActivate
         }
     }
+    return state;
 }
 
 const LibretaProvider = ( {children} ) => {

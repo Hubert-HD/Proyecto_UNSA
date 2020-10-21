@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Redirect } from "react-router-dom"
 import { UserContext } from "../../context/UserContext"
-import { useContext } from "react";
+import { SET_USER } from "../../context/actions";
 
 const Logout = () => {
-    const {logout} = useContext(UserContext);
+    const [state, dispatch] = useContext(UserContext);
 
-    logout();
+    dispatch({
+        type: SET_USER, 
+        user: null
+    })
 
     return (
         <Redirect to="/" />

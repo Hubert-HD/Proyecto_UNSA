@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import "../../styles/libretaApp.scss";
 
 import Table from "../atoms/Table";
-import ButtonGrid from "../molecules/ButtonGrid";
-import { LibretaProvider, LibretaContext } from "../../context/LibretaContext";
+import { LibretaProvider } from "../../context/LibretaContext";
 import Modal from "../organisms/Modal";
+import Action from "../organisms/Action";
 
 
 const ReportCard = () => {
@@ -13,13 +13,10 @@ const ReportCard = () => {
     return (
         <LibretaProvider>
             <div class="libreta">
-                <div class="libreta__content">
-                    <Table />
-                </div>
-                <ButtonGrid/>
+                <Table />
+                <Action />
+                <Modal />
             </div>
-            <Modal></Modal>
-            
         </LibretaProvider>
     )
 }

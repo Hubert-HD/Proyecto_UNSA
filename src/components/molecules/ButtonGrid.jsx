@@ -1,19 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import Button from '../atoms/Button';
-import { LibretaContext } from '../../context/LibretaContext';
-import { ACTIVATE_MODAL } from '../../context/actions';
-
-const ButtonGrid = () => {
-
-    const [state, dispatch] = useContext(LibretaContext);
+const ButtonGrid = ({children}) => {
 
     return (
-        <div class="libreta__action" onClick={() => dispatch({
-            type: ACTIVATE_MODAL
-        })}>  
-            <Button icon="fas fa-plus" cartel="AÑADIR" id="addButton" color="button--green" />
-            <Button icon="fas fa-pen" cartel="EDITAR" id="editButton" color="button--yellow"/>
+        <div class="libreta__action">  
+            {children}
         </div>
     )
 }
