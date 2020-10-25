@@ -15,6 +15,7 @@ $showDesing: false;
 }
 
 .container-main{
+    padding: 0.5em;
     flex: 1 0 0;
     @include style-design(true, relative, 100, "MAIN", false, #e74d3c70, #3498db70);
 }

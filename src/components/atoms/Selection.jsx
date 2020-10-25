@@ -1,89 +1,65 @@
-import React from 'react'
-import { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
-const Button = ({cartel, optionList}) => {
+const Selection = ({placeholder, optionList, value, useForm}) => {
 
-    useEffect(() => {
-        window.addEventListener("click", function(e){
-            const element = e.target;
-            document.querySelectorAll(".optionList--show").forEach(function (optionList){
-                const selection = optionList.parentElement;
-                const selecBox = selection.querySelector(".selecBox");
-                const selecBox__content = selecBox.querySelector(".selecBox__content");
-                const selecBox__ico = selecBox.querySelector(".selecBox__ico");
-                let array = [selection, selecBox, selecBox__content, selecBox__ico];
-                if(!array.includes(element)){
-                    optionList.classList.replace("optionList--show", "optionList--hidden");
-                }
-            });
-        });
-        
-        document.querySelectorAll(".selection").forEach(function (selection) {
-            const selecBox = selection.querySelector(".selecBox");
-            const selecBox__content = selecBox.querySelector(".selecBox__content");
-            const selecBox__ico = selecBox.querySelector(".selecBox__ico");
-            const optionList = selection.querySelector(".optionList");
-            const selection__input = selection.querySelector(".selection__input");
-        
-            selecBox.addEventListener("click", function(){
-                if(optionList.classList.contains("optionList--hidden")){
-                    optionList.classList.replace("optionList--hidden", "optionList--show");
-                    selecBox__ico.classList.replace("selecBox__ico--down", "selecBox__ico--up");
-                    optionList.querySelectorAll(".optionList__option").forEach(function (option){
-                        option.setAttribute("tabindex", "0");
-                    });
-                }
-                else{
-                    optionList.classList.replace("optionList--show", "optionList--hidden");
-                    selecBox__ico.classList.replace("selecBox__ico--up", "selecBox__ico--down");
-                    optionList.querySelectorAll(".optionList__option").forEach(function (option){
-                        option.removeAttribute("tabindex");
-                    });
-                }
-        
-                optionList.querySelectorAll(".optionList__option").forEach(function(option){
-                    option.addEventListener("click", function(e){
-                        selecBox__content.innerHTML = e.target.innerHTML;
-                        selecBox__content.classList.add("selecBox__content--full");
-                        selection__input.value = e.target.innerHTML;
-        
-                        optionList.classList.replace("optionList--show", "optionList--hidden");
-                        selecBox__ico.classList.replace("selecBox__ico--up", "selecBox__ico--down");
-                        optionList.querySelectorAll(".optionList__option").forEach(function (option){
-                            option.removeAttribute("tabindex");
-                        });
-                    });
-        
-                    option.addEventListener("keydown", function(event) {
-                        if (event.key === "Enter") {
-                            event.preventDefault();
-                            event.target.click();
-                        }
-                    });
-                });
-            });
-        
-            selecBox.addEventListener("keydown", function(event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    event.target.click();
-                }
-            });
-        });  
-    });
+  const [activate, setActivate] = useState(false)
+  const [box, setBox] = useState(value)
+  const selection = useRef(null);
+  
+  useEffect(() => {
+    window.addEventListener("click", handleEvent);
+    return () => {window.removeEventListener("click", handleEvent)}
+  }, []);
+  
+  const handleEvent = (event) => {
+    if(!selection.current.contains(event.target))
+      setActivate(false)
+  }
 
-    return (
-        <div class="selection">
-            <div class="selecBox" tabindex="0">
-                <div class="selecBox__content selecBox__content--void">{cartel}</div>
-                <i class="selecBox__ico selecBox__ico--down fas fa-angle-down"></i>
-            </div>
-            <div class="optionList optionList--hidden">
-                {optionList.map(option => <div class="optionList__option">{option}</div>)}
-            </div>
-            <input class="selection__input" type="hidden" name="ciclo" value=""/>
-        </div>
-    )
+  useEffect(() => {
+    useForm[1]({...useForm[0], period: box})
+  }, [box])
+
+  return (
+    <div className="selection" ref={selection}>
+      <div 
+        className="selecBox"
+        tabindex="0"
+        onClick={() => setActivate(!activate)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter")
+            setActivate(!activate)
+        }}>
+        <div className={`selecBox__content selecBox__content--${box ? "full" : "void"}`}>{box ? box : placeholder}</div>
+        <i className={`selecBox__ico selecBox__ico--${activate ? "up" : "down"} fas fa-angle-down` }></i>
+      </div>
+      <div className={`optionList optionList--${activate ? "show" : "hidden"}`}>
+        {
+          optionList.map(option => 
+            <div 
+              key={option}
+              className="optionList__option"
+              onClick={() => {
+                setBox(option)
+                setActivate(!activate)
+              }}
+              tabindex={activate ? "0":"-1"}
+              onKeyDown={(event) => {
+                if (event.key === "Enter"){
+                  setBox(option)
+                  setActivate(!activate)
+                }
+              }}
+              onMouseOver={ (event) => {
+                event.target.focus()
+              }}
+            >{option}</div>
+          )
+        }
+      </div>
+      <input className="selection__input" type="hidden" name="ciclo" value={box ? box : value}/>
+    </div>
+  )
 }
 
-export default Button;
+export default Selection;

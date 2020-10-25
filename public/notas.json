@@ -1,0 +1,99 @@
+{
+    "user": "Hubert Alexander",
+    "periods": [
+        "2019-I", "2019-II", "2020-I"
+    ],
+    "curses": [
+        {
+            "id": 1,
+            "name": "Matemática Básica",
+            "note": 19,
+            "credit": 4,
+            "period": "2019-I"
+        },
+        {
+            "id": 2,
+            "name": "Fundamentos de la Programación 1",
+            "note": 19,
+            "credit": 3,
+            "period": "2019-I"
+        },
+        {
+            "id": 3,
+            "name": "Estructuras Discretas 1",
+            "note": 15,
+            "credit": 4,
+            "period": "2019-I"
+        },
+        {
+            "id": 4,
+            "name": "Razonamiento Matemático",
+            "note": 19,
+            "credit": 4,
+            "period": "2019-I"
+        },
+        {
+            "id": 5,
+            "name": "Introducción a la computación",
+            "note": 15,
+            "credit": 4,
+            "period": "2019-I"
+        },
+        {
+            "id": 6,
+            "name": "Matemática Básica",
+            "note": 19,
+            "credit": 4,
+            "period": "2019-II"
+        },
+        {
+            "id": 7,
+            "name": "Fundamentos de la Programación 1",
+            "note": 19,
+            "credit": 5,
+            "period": "2019-II"
+        },
+        {
+            "id": 8,
+            "name": "Estructuras Discretas 1",
+            "note": 15,
+            "credit": 4,
+            "period": "2019-II"
+        },
+        {
+            "id": 9,
+            "name": "Razonamiento Matemático",
+            "note": 19,
+            "credit": 2,
+            "period": "2019-II"
+        },
+        {
+            "id": 10,
+            "name": "Introducción a la computación",
+            "note": 15,
+            "credit": 4,
+            "period": "2019-II"
+        },
+        {
+            "id": 1,
+            "name": "Matemática Básica",
+            "note": 19,
+            "credit": 4,
+            "period": "2020-I"
+        },
+        {
+            "id": 2,
+            "name": "Fundamentos de la Programación 1",
+            "note": 19,
+            "credit": 4,
+            "period": "2020-I"
+        },
+        {
+            "id": 3,
+            "name": "Estructuras Discretas 1",
+            "note": 15,
+            "credit": 4,
+            "period": "2020-I"
+        }
+    ]
+}

@@ -1,13 +1,10 @@
-import React, {useContext} from "react"
-
-import FormAction from "../organisms/FormAction";
+import React from "react"
 
 const Home = () => {
 
     return (
-        <div>
-            <p>Este es el home</p>
-        </div>
+        <h1>Home</h1>
+
     )
 }
 

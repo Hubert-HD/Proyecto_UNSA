@@ -47,26 +47,26 @@ $grid-proporcion: 2fr 1fr 1.2fr;
             margin: 0.25em 0.5em;
         }
     }
+}
 
-    .buttonIco{
-        color: #1abc9c;
-        margin: 0.2em;
+.buttonIco{
+    color: #1abc9c;
+    margin: 0.2em;
 
-        &--green{
-            color: #2ecc71;
-        }
-
-        &--yellow{
-            color: #f1c40f;
-        }
-
-        &--red{
-            color: #e74c3c;
-        }
-
-        &--orange{
-            color: #e67e22;
-        }
-
+    &--green{
+        color: #2ecc71;
     }
+
+    &--yellow{
+        color: #f1c40f;
+    }
+
+    &--red{
+        color: #e74c3c;
+    }
+
+    &--orange{
+        color: #e67e22;
+    }
+
 }

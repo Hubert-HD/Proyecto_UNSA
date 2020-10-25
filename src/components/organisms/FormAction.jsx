@@ -8,7 +8,7 @@ const FormAction = ({title, children}) => {
     return (
         <div class="form-course">
             <h1 class="form-course__title">{title}</h1>
-            <Form />
+            <Form name="Sinb curso" note={15} credit={4} period="Ciclo"/>
             <ButtonGrid>
                 {children}
             </ButtonGrid>

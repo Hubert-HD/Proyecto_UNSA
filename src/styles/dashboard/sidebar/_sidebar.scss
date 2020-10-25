@@ -97,6 +97,12 @@ $showDesing: false;
     height: 3em;
     overflow: hidden;
     @include style-design(true, relative, 200, "LINK", false, #f1290f7a, #1abc9c7c);
+
+
+    &--down{
+        position: absolute;
+        bottom: 2em;
+    }
 }
 
 .linkItem{

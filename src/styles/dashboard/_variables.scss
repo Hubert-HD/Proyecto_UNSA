@@ -16,7 +16,7 @@ $bg-sidebar: #2c3e50;
 $heightHeader: 4em;
 $heightFooter: 4em;
 $bg-header: #ecf0f1;
-$bg-main: #bdc3c7;
+$bg-main: white;
 $bg-footer: #34495e;
 
 @mixin style-design($visible, $position, $z-index, $content, $orientation, $bg-design, $color-design) {
