@@ -1,16 +1,21 @@
-import React from 'react'
-
-import PhotoUser from '../atoms/PhotoUser';
-import NickUser from '../atoms/NickUser';
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
 
 const User = () => {
 
-    return (
-        <div className="container-user">
-            <PhotoUser />
-            <NickUser />
-        </div>
+  const [userStorage] = useContext(UserContext);
+  
+  return (
+    <div className="container-user">
+      <div className="container-userPhoto">
+        <img className="userPhoto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnybAJXEPyyWRFMHN6glsrb7jhJHLUkrHjg&usqp=CAU" alt=""/>
+      </div>
+      <div className="container-userInfo">
+        <Link className="userInfo" to=".">{userStorage.user}</Link>
+      </div>
+    </div>
     )
-}
-
-export default User;
+  }
+  
+  export default User;

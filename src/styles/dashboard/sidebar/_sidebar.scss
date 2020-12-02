@@ -12,6 +12,7 @@ $showDesing: false;
 .container-sidebar{
     background-color: $bg-sidebar;
     overflow-y: auto;
+    z-index: 1000;
     @include style-design(true, fixed, 200, "SIDEBAR", true, #f1c40f7a, #1abc9c7c);
 }
 

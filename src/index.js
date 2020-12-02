@@ -7,7 +7,6 @@ import { UserProvider } from "./context/UserContext";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-
   <React.StrictMode>
     <UserProvider>
       <BrowserRouter>

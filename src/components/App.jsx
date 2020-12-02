@@ -2,26 +2,32 @@ import React, {useContext} from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Dashboard from './templates/Dashboard';
-import Login from './pages/Login';
-import Logout from './pages/Logout';
-import Public from './pages/Public';
-import NotFound from './pages/NotFound';
+import LoginPage from './pages/LoginPage';
+import PublicPage from './pages/PublicPage';
+import NotFoundPage from './pages/NotFoundPage';
 
-import {UserContext} from "../context/UserContext";
+import { UserContext } from "../context/UserContext";
+import { useEffect } from 'react';
 
 const App = () => {  
+  const [userStorage, dispatch] = useContext(UserContext);
+  useEffect(() => {
+    if(localStorage.getItem("user")){
+      let user = localStorage.getItem("user")
+      dispatch({
+        type: "LOGIN_USER", 
+        user: user
+      })
+    }
+  }, [])
 
-    const [state] = useContext(UserContext);
-
-    return (
-        <Switch>
-            <Route path="/login" component={ Login } />
-            <Route path="/logout" component={ state.user ? Logout : NotFound} />
-            <Route path="/" component={ state.user ? Dashboard : Public } />
-            <Route component={ NotFound } />
-        </Switch>
+  return (
+    <Switch>
+      <Route path="/login" component={ LoginPage } />
+      <Route path="/" component={ (userStorage.user !== "Anonymous") ? Dashboard : PublicPage } />
+      <Route component={ NotFoundPage } />
+    </Switch>
     );
-}
-
-
+  }
+  
 export default App;

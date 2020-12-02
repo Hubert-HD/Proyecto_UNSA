@@ -1,0 +1,44 @@
+[
+  {
+    "id":  1,
+    "name": "Fundamentos de la programación I",
+    "note": 19,
+    "credit": 4,
+    "period": "2019-I"
+  },
+  {
+    "id":  2,
+    "name": "Matematica Basica",
+    "note": 19,
+    "credit": 4,
+    "period": "2019-I"
+  },
+  {
+    "id":  3,
+    "name": "Metodologia del Trabajo Universidario",
+    "note": 18,
+    "credit": 2,
+    "period": "2019-I"
+  },
+  {
+    "id":  4,
+    "name": "Introducción a la Computación",
+    "note": 16,
+    "credit": 4,
+    "period": "2019-I"
+  },
+  {
+    "id":  5,
+    "name": "Fundamentos de la programación II",
+    "note": 15,
+    "credit": 4,
+    "period": "2019-II"
+  },
+  {
+    "id":  6,
+    "name": "Calculo en una variable",
+    "note": 17,
+    "credit": 4,
+    "period": "2019-II"
+  }
+]

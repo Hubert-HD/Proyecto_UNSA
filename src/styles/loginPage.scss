@@ -1,0 +1,155 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-image: linear-gradient(#8ec9f1, #0082d8);
+}
+
+.form-login{
+    // Layout
+    width: 90%;
+    max-width: 35em;
+    display: flex;
+    flex-direction: column;
+
+    // Theme
+    background-color:#ecf0f1;
+    border-radius: 0.5em;
+    border: 2px solid #f1c40f;
+
+    &__title{
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+        margin: 0.25em;
+        border-bottom: 2px solid #f1c40f;
+        text-align: center;
+        font-family: 'Strait', sans-serif;
+        color: #3498db;
+    }
+
+    &__form{
+        flex: 6;
+        padding: 1em 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__input{
+        width: 100%;
+        margin: 0.5em 0;
+        display: block;
+        background-color: white;
+        border-radius: 1rem;
+        border: 2px solid #f1c40f;
+        padding: 0 0.5rem;
+        min-width: 0;
+
+        height: 50px;
+        appearance: none;
+        cursor: pointer;
+        font-size: 1.5em;
+        font-family: 'Poor Story', cursive;
+        text-align: center;
+
+        &::placeholder {
+            color: #7f8c8d;
+            opacity: 1;
+        }
+
+        &:focus{
+            border: 2px solid #f39c12;
+            box-shadow: 0 0 5px #f39c12;
+            outline: none;
+        }
+
+        &:first-child{
+            grid-column: 1 / 4;
+        }
+    }
+}
+
+.button{
+    // layout 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+    width: 7.5em;
+    height: 2.5em;
+    
+    // theme
+    outline: none;
+    font-size: 1.3rem;
+    background-color: #3498db;
+    color: #f0f0f0;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    word-break: break-word;
+    overflow: hidden;
+    transition: all 0.2s;
+
+    &__ico{
+        margin: 0.35em;
+    }
+
+    &__text{
+        margin: 0.35em;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Poor Story', cursive;
+    }
+
+    &:hover{
+        background-color: #1d85ca;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+    }  
+
+    &--green{
+        background-color: #27ae60;
+        &:hover{
+            background-color: #209450;
+        } 
+    }
+
+    &--yellow{
+        background-color: #f39c12;
+        &:hover{
+            background-color: #ee8b09;
+        } 
+    }
+
+    &--red{
+        background-color: #df4736;
+        &:hover{
+            background-color: #d12f1c;
+        } 
+    }
+}
+
+// Media querys
+@media only screen and (max-width: 500px) {
+
+    .form-login__form{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .form-login__input:first-child{
+        grid-column: 1 / 2;
+    }
+
+}

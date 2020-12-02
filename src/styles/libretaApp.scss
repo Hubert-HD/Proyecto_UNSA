@@ -70,3 +70,50 @@ $grid-proporcion: 2fr 1fr 1.2fr;
     }
 
 }
+
+.calc{
+    &__input{
+        display: block;
+        background-color: white;
+        border-radius: 1rem;
+        border: 2px solid #f1c40f;
+        padding: 0 0.2rem;
+        min-width: 0;
+
+        height: 42px;
+        width: 60px;
+        appearance: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-family: 'Poor Story', cursive;
+        text-align: center;
+
+        &::placeholder {
+            color: #7f8c8d;
+            opacity: 1;
+        }
+
+        &:focus{
+            border: 2px solid #f39c12;
+            box-shadow: 0 0 5px #f39c12;
+            outline: none;
+        }
+    }
+
+    &__input[type=number]{
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &__text{
+        font-family: 'Poor Story', cursive;
+        font-size: 1.5rem;
+        padding: 0 2px;
+    }
+}

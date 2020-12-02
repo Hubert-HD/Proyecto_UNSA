@@ -1,19 +1,21 @@
 import React from "react";
 import { useReducer } from "react";
-import {SET_USER} from "./actions";
-
 
 const initialState = {
-    user: "Hubert Alexander",
-    photo: "img/user.jpg"
+    user: "Anonymous"
 };
 
 const UserContext = React.createContext();
 
 const userReducer = (state, {type, user}) => {
-    if(type === SET_USER){
+    if(type === "LOGIN_USER"){
         return {
             user: user
+        }
+    }
+    if(type === "LOGOUT_USER"){
+        return {
+            user: "Anonymous"
         }
     }
     return state;
@@ -21,7 +23,7 @@ const userReducer = (state, {type, user}) => {
 
 const UserProvider = ( {children} ) => {
 
-    const [state, dispatch] = useReducer(userReducer,initialState);
+    const [state, dispatch] = useReducer(userReducer, initialState);
 
     return (
         <UserContext.Provider value={[state, dispatch]}>
