@@ -4,8 +4,10 @@ import { useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useHistory, useParams } from "react-router-dom";
 import Button from "../atoms/Button";
+import { useTranslation } from "react-i18next";
 
 const ModalRemove = () => {
+  let {t} = useTranslation()
   const [newCourse, setNewCourse] = useState({id: 0, name: ""})
   const [appStorage, dispatch] = useContext(AppContext);
   const history = useHistory()
@@ -33,13 +35,13 @@ const ModalRemove = () => {
     <div className="libreta__modal">
       <div className="modal modal--show">
         <div className="form-course">
-            <h1 className="form-course__title">Eliminar curso</h1>
+            <h1 className="form-course__title">{t("modal.remove")}</h1>
             <h1 className="form-course__content">
-              {(newCourse.name) ? ("¿Está seguro de eliminar \"" + newCourse.name + "\"?") : ""} 
+              {(newCourse.name) ? (t("modal.remove.info") + " \"" + newCourse.name + "\"?") : ""} 
             </h1>
             <div className="libreta__action">
-              <Button icon="fas fa-check" cartel="CONFIRMAR" color="button--green" onClick={save}/>
-              <Button icon="fas fa-times" cartel="CANCELAR" color="button--red" onClick={cancel}/>
+              <Button icon="fas fa-check" cartel={t("modal.confirm")} color="button--green" onClick={save}/>
+              <Button icon="fas fa-times" cartel={t("modal.cancel")} color="button--red" onClick={cancel}/>
             </div>
         </div>
       </div>

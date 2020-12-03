@@ -1,39 +1,57 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from 'react-router-dom';
+import { useTranslation } from "react-i18next"
+import { LanguageContext } from '../../context/LanguageContext'
 import "../../styles/inicio.scss"
+import "../../styles/buttonLanguagePublic.scss"
 
 const PublicPage = () => {
+  const {t, i18n} = useTranslation()
+  const [languageStorage, dispatch] = useContext(LanguageContext)
+
+  useEffect(() => {
+    i18n.changeLanguage(languageStorage.language)
+  }, [languageStorage])
   
   return (
     <>
       <header className="headerPublic">
         <h1 className="appText">ToolStudent</h1>
         <div className="paginas-container">
-          <Link className="paginas">Inicio</Link>
-          <Link className="paginas">Contacto</Link>
-          <Link className="paginas">Servicios</Link>
+          <Link className="paginas">{t("home")}</Link>
+          <Link className="paginas">{t("contact")}</Link>
+          <Link className="paginas">{t("services")}</Link>
         </div>
-        <Link to="./login" className="login">Iniciar Session</Link>
+        <Link to="./login" className="login">{t("login")}</Link>
       </header>
       <section className="banner">
         <h1 className="nombreApp">ToolStudent</h1>
-        <p className="subtitulo">Una herramienta web para universitarios</p>
-        <Link className="button buttonPublic">Más información</Link>
+        <img className="dashPhoto" src="img/dashboard.png" alt="dashboard.png"/>
+        <div className="centrado">
+          <p className="subtitulo">{t("tool.info")}</p>
+          <Link className="button buttonPublic">{t("tool.button")}</Link>
+        </div>
       </section>
       <footer className="footer">
-        <div className="foot-item">
-          <img className="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJo3fuUQ2wlUKcjcjMYkJa_ZsRe7a2fVezFg&usqp=CAU" alt=""/>
-          <h3 className="subtitulo">Libreta de notas</h3>
+        <div className="foot-item foot-item-libreta">
+          <img className="imagen" src="img/libreta.png" alt=""/>
+          <h3 className="subtitulo">{t("subtitle.note")}</h3>
         </div>
-        <div className="foot-item foot-item-center">
-          <img className="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJo3fuUQ2wlUKcjcjMYkJa_ZsRe7a2fVezFg&usqp=CAU" alt=""/>
-          <h3 className="subtitulo">Lista de tareas</h3>
+        <div className="foot-item foot-item-tareas">
+          <img className="imagen" src="img/tareas.png" alt=""/>
+          <h3 className="subtitulo">{t("subtitle.task")}</h3>
         </div>
-        <div className="foot-item">
-          <img className="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJo3fuUQ2wlUKcjcjMYkJa_ZsRe7a2fVezFg&usqp=CAU" alt=""/>
-          <h3 className="subtitulo">Calculadora de notas</h3>
+        <div className="foot-item foot-item-calculadora">
+          <img className="imagen" src="img/calculadora.png" alt=""/>
+          <h3 className="subtitulo">{t("subtitle.calc")}</h3>
         </div>
       </footer>
+      <div className="buttonLang-container">
+        <span className="subtitle">{t("language.title")}</span>
+        <button className={`buttonLang ${(languageStorage.language === "es") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "es"})}>ES</button>
+        <button className={`buttonLang ${(languageStorage.language === "en") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "en"})}>EN</button>
+        <button className={`buttonLang ${(languageStorage.language === "jp") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "jp"})}>JP</button>
+      </div>
     </>
     )
   }

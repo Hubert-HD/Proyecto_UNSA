@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import "../../styles/libretaApp.scss";
+import { useTranslation } from "react-i18next"
 import { AppContext } from "../../context/AppContext";
+import "../../styles/libretaApp.scss";
 
 const ReportCardPage = () => {
 
+  let {t} = useTranslation()
   const [appStore] = useContext(AppContext);
   const [score, setScore] = useState({
     note: 0,
@@ -56,7 +58,6 @@ const ReportCardPage = () => {
         credit: credit
       })
     })
-    console.log(data)
     setData(data)
   };
 
@@ -65,9 +66,9 @@ const ReportCardPage = () => {
       <table className="tableList">
         <thead className="tableList__head">
           <tr className="tableList__row tableList__row--title">
-            <th className="tableList__colum tableList__colum--center">NOMBRE DEL CURSO</th>
-            <th className="tableList__colum tableList__colum--center">NOTA</th>
-            <th className="tableList__colum tableList__colum--center">CREDITO</th>
+            <th className="tableList__colum tableList__colum--center">{t("table.title.name")}</th>
+            <th className="tableList__colum tableList__colum--center">{t("table.title.note")}</th>
+            <th className="tableList__colum tableList__colum--center">{t("table.title.credit")}</th>
           </tr>
         </thead>
         {
@@ -78,7 +79,7 @@ const ReportCardPage = () => {
         }
         <tfoot className="tableList__foot">
           <tr className="tableList__row tableList__row--result">
-            <td className="tableList__colum tableList__colum--center">PROMEDIO</td>
+            <td className="tableList__colum tableList__colum--center">{t("table.title.promedio")}</td>
             <td className="tableList__colum tableList__colum--center">{score.note}</td>
             <td className="tableList__colum tableList__colum--center">{score.credit}</td>
           </tr>

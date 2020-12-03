@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import "../../styles/flipcard.scss";
 import { useState } from "react";
 import { AppContext } from "../../context/AppContext";
+import { useTranslation } from "react-i18next"
 import { Route, useHistory, Switch } from "react-router-dom";
 import ModalAdd from "./CourseAdd";
 import ModalEdit from "./CourseEdit";
@@ -11,10 +12,11 @@ const CoursesPages = () => {
 
   const [appStore] = useContext(AppContext);
   const history = useHistory();
+  let {t} = useTranslation()
   
   return (
     <div className="courses">
-      <h2 className="title">Mis cursos</h2>
+      <h2 className="title">{t("link.course")}</h2>
       <div className="coursesGrid">
         {
           appStore.courses.map(({id, name, note, credit, period}) => <CourseCard key={id} id={id} period={period} course={name} note={note} credit={credit}/>)
@@ -38,10 +40,10 @@ const CourseCard = ({id, period, course, note, credit}) => {
 
   return (
     <div className={"flipCard " + ((isFront) ? "" : "flipCard--flip")} onClick={() => setIsFront(!isFront)}>
-      <div className="flipCard__front">
+      <div className={"flipCard__front" + ((note < 11) ? " red" : "")}>
         <h1 className="courseName">{course}</h1>
       </div>
-      <div className="flipCard__back">
+      <div className={"flipCard__back" + ((note < 11) ? " red" : "")}>
         <h1 className="periodo">{period}</h1>
         <div className="cardInfo">
           <p className="cardInfo__label">Nota</p>
@@ -52,10 +54,10 @@ const CourseCard = ({id, period, course, note, credit}) => {
           <p className="cardInfo__value">{credit}</p>
         </div>
         <div className="menu">
-          <div className="menu__option" onClick={(e) => history.push("/cursos/edit/" + id)}>
+          <div className="menu__option color-yellow" onClick={(e) => history.push("/cursos/edit/" + id)}>
             <i className="fas fa-pen"></i>
           </div>
-          <div className="menu__option" onClick={(e) => history.push("/cursos/delete/" + id)}>
+          <div className="menu__option color-red" onClick={(e) => history.push("/cursos/delete/" + id)}>
             <i className="far fa-trash-alt"></i> 
           </div>
         </div>

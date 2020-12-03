@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
+import { LanguageProvider } from './context/LanguageContext';
+import "./i18n"
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    <LanguageProvider>
     <UserProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </UserProvider>
+    </LanguageProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

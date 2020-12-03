@@ -1,10 +1,11 @@
 import React from "react";
 import { useReducer } from "react";
 import coursesData from "./courses.json";
+import tasksData from "./tasks.json";
 
 const initialState = {
     courses: coursesData,
-    tasks: {}
+    tasks: tasksData
 };
 
 const AppContext = React.createContext();
@@ -16,7 +17,24 @@ const appReducer = (state, {type, data}) => {
         editCourse(state, data)
     if(type === "REMOVE_COURSE")
         removeCourse(state, data)
-    return state;
+    if(type === "ADD_TASK")
+        addTask(state, data)
+    if(type === "REMOVE_TASK")
+        removeTask(state, data)
+    return {...state};
+}
+
+const addTask = ({tasks}, {description}) => {
+    let id = (tasks.length > 0) ? tasks[tasks.length - 1].id + 1 : 1
+    let newTask = {
+        id:  id,
+        description: description
+    }
+    tasks.push(newTask)
+}
+
+const removeTask = (state, {id}) => {
+    state.tasks = state.tasks.filter(task => task.id !== id)
 }
 
 const addCourse = ({courses}, {name, note, credit, period}) => {
@@ -47,7 +65,6 @@ const editCourse = ({courses}, {id, name, note, credit, period}) => {
 }
 
 const removeCourse = (state, {id}) => {
-
     state.courses = state.courses.filter(course => course.id !== id)
 }
 

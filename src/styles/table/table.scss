@@ -15,7 +15,8 @@ $grid-proporcion: 2fr 1fr 1.2fr;
     
     // Layout
     padding: 1em;
-
+    width: 100%;
+    max-width: 45em;
     // Theme default
     background-color: var(--bgcolor);
     border-radius: 0.35em;

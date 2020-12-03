@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/libretaApp.scss";
 import "../../styles/calcApp.scss";
+import { useTranslation } from "react-i18next";
 
 const ReportCardPage = () => {
-
+  let {t} = useTranslation()
   const [notes, setNotes] = useState([
     {note: 0, peso: 0},
     {note: 0, peso: 0},
@@ -46,24 +47,24 @@ const ReportCardPage = () => {
   }
 
   return (
-    <div class="tableList-container tableList-container__calc">
+    <div className="tableList-container tableList-container__calc">
       <table className="tableList">
         <thead className="tableList__head">
           <tr className="tableList__row tableList__row--title">
-            <th className="tableList__colum tableList__colum--center">EVALUACIÓN</th>
-            <th className="tableList__colum tableList__colum--center">NOTA</th>
-            <th className="tableList__colum tableList__colum--center">PESO</th>
+            <th className="tableList__colum tableList__colum--center">{t("calc.evaluation")}</th>
+            <th className="tableList__colum tableList__colum--center">{t("calc.note")}</th>
+            <th className="tableList__colum tableList__colum--center">{t("calc.weight")}</th>
           </tr>
         </thead>
         <tbody className="tableList__body">
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">CONTINUA 1</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 1"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota1"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -74,7 +75,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -83,13 +84,13 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">EXAMEN 1</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 1"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota2"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -100,7 +101,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -109,13 +110,13 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">CONTINUA 2</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 2"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota2"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -126,7 +127,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -135,13 +136,13 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">EXAMEN 2</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 2"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota2"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -152,7 +153,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -161,13 +162,13 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">CONTINUA 3</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 3"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota2"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -178,7 +179,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -187,13 +188,13 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">EXAMEN 3</td>
+            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 3"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
                 type="number"
                 name="nota2"
-                placeholder="Nota"
+                placeholder={t("calc.input.note")}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -204,7 +205,7 @@ const ReportCardPage = () => {
               <input
                 className="calc__input"
                 type="number"
-                placeholder="Peso%"
+                placeholder={t("calc.input.weight") + "%"}
                 min="0"
                 max="20"
                 autoComplete="off"
@@ -215,7 +216,7 @@ const ReportCardPage = () => {
         </tbody>
         <tfoot className="tableList__foot">
           <tr className="tableList__row tableList__row--result">
-            <td className="tableList__colum tableList__colum--center">PROMEDIO</td>
+            <td className="tableList__colum tableList__colum--center">{t("table.title.promedio")}</td>
             <td className="tableList__colum tableList__colum--center">{score.note}</td>
             <td className="tableList__colum tableList__colum--center">{score.peso}%</td>
           </tr>

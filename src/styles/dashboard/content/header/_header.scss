@@ -10,6 +10,8 @@ $showDesing: false;
     justify-content: space-between;
     background-color: $bg-header;
 
+
+
     @include style-design(true, relative, 200, "HEADER", false, #f1c40f7a, #1abc9c7c);
 }
 
@@ -20,17 +22,10 @@ $showDesing: false;
     @include style-design(true, relative, 200, "LOGO", false, #f10f0f7a, #1abc707c);
 }
 
-.logoPhoto{
-    margin-left: 1em;
-    width: 6em;
-    object-fit: cover;
-
-    @include style-design(true, relative, 200, "PHOTO", false, #4b0ff17a, #1a96bc7c);
-}
-
 .logoInfo{
+    padding-left: 1em;
     width: 5.5em;
-    color: $bg-sidebar;
+    color: #3498db;
     text-align: center;
     white-space: nowrap;
     font-family: 'Strait', sans-serif;
@@ -73,10 +68,6 @@ $showDesing: false;
 @media only screen and (max-width: 480px) {
     html{
         font-size: 15px;
-    }
-
-    .logoInfo{
-        display: none;
     }
 }
 

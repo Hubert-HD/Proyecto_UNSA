@@ -6,18 +6,18 @@ $widthMinSidebar: 4em;
 $widthMaxSidebar: 80%;
 $timeTransitionSidebar: 0.5s;
 
-$color-text:#bdc3c7;
+$color-text: white;
 
 //Sidebar-Theme
 $heightContainerUser: 5em;
-$bg-sidebar: #2c3e50;
+$bg-sidebar: #0572bb;
 
 //Content-Layout
 $heightHeader: 4em;
 $heightFooter: 4em;
-$bg-header: #ecf0f1;
-$bg-main: white;
-$bg-footer: #34495e;
+$bg-header: white;
+$bg-main: #e0f3ff;
+$bg-footer: #0082d8;
 
 @mixin style-design($visible, $position, $z-index, $content, $orientation, $bg-design, $color-design) {
     @if $visible {

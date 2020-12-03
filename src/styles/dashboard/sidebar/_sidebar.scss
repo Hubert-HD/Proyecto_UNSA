@@ -1,6 +1,6 @@
 @import "../variables";
 
-$color-hover:#e2eaec;
+$color-hover: white;
 
 $timeTransitionLinkButton: 0.25s;
 
@@ -49,8 +49,8 @@ $showDesing: false;
 }
 
 .userPhoto{
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     border-radius: 50%;
 
@@ -98,12 +98,11 @@ $showDesing: false;
     height: 3em;
     overflow: hidden;
     @include style-design(true, relative, 200, "LINK", false, #f1290f7a, #1abc9c7c);
+}
 
-
-    &--down{
-        position: absolute;
-        bottom: 2em;
-    }
+.container-linkLogout{
+    padding-top: 3.5em;
+    padding-bottom: 1em;
 }
 
 .linkItem{
@@ -116,6 +115,15 @@ $showDesing: false;
     transition: background-color $timeTransitionLinkButton;
 
     &:hover{
+        background-color: rgba(255, 255, 255, 0.84);
+        cursor: pointer;
+
+        .iconLink, .cartelLink{
+            color: $bg-sidebar;
+        }
+    }
+
+    &-active{
         background-color: $color-hover;
         cursor: pointer;
 

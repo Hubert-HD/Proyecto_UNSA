@@ -1,44 +1,86 @@
 [
   {
     "id":  1,
-    "name": "Fundamentos de la programación I",
+    "name": "Fundamentos de la Programación I",
     "note": 19,
-    "credit": 4,
+    "credit": 5,
     "period": "2019-I"
   },
   {
     "id":  2,
-    "name": "Matematica Basica",
+    "name": "Matemática Básica",
     "note": 19,
     "credit": 4,
     "period": "2019-I"
   },
   {
     "id":  3,
-    "name": "Metodologia del Trabajo Universidario",
-    "note": 18,
-    "credit": 2,
+    "name": "Estructuras Discretas I",
+    "note": 14,
+    "credit": 3,
     "period": "2019-I"
   },
   {
     "id":  4,
     "name": "Introducción a la Computación",
     "note": 16,
-    "credit": 4,
+    "credit": 2,
     "period": "2019-I"
   },
   {
     "id":  5,
-    "name": "Fundamentos de la programación II",
+    "name": "Metodología del Trabajo Intelectual Universitario",
+    "note": 17,
+    "credit": 2,
+    "period": "2019-I"
+  },
+  {
+    "id":  6,
+    "name": "Relaciones Humanas",
     "note": 15,
+    "credit": 2,
+    "period": "2019-I"
+  },
+  {
+    "id":  7,
+    "name": "Cálculo en una variable",
+    "note": 18,
     "credit": 4,
     "period": "2019-II"
   },
   {
-    "id":  6,
-    "name": "Calculo en una variable",
-    "note": 17,
+    "id":  8,
+    "name": "Estructuras Discretas II",
+    "note": 15,
+    "credit": 3,
+    "period": "2019-II"
+  },
+  {
+    "id":  9,
+    "name": "Fundamentos de la Programación II",
+    "note": 15,
+    "credit": 5,
+    "period": "2019-II"
+  },
+  {
+    "id":  10,
+    "name": "Programación Web I",
+    "note": 18,
     "credit": 4,
+    "period": "2019-II"
+  },
+  {
+    "id":  11,
+    "name": "Comunicación Integral",
+    "note": 15,
+    "credit": 3,
+    "period": "2019-II"
+  },
+  {
+    "id":  12,
+    "name": "Ciudadania e Interculturalidad",
+    "note": 12,
+    "credit": 2,
     "period": "2019-II"
   }
 ]

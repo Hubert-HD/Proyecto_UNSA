@@ -1,0 +1,62 @@
+
+.button-container{
+  padding-top: 10px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: auto auto;
+  row-gap: 5px;
+  width: 185px;
+  justify-items: center;
+
+  .subtitle{
+    grid-column: 1 / 4;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Strait', sans-serif;
+  }
+  
+  .buttonLanguage{
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+    background-color: #0572bb;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+  
+    &:focus{
+      outline: none;
+    }
+  
+    &-active{
+      background-color: white;
+      border: 2px solid white;
+      color: #0572bb;
+    }
+  }
+}
+
+.sidebar-contracted{
+
+  .buttonLanguage-active{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  &:hover{
+    .buttonLanguage-active{
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}
+
+.container-sidebar{
+  overflow-x: hidden
+}

@@ -9,7 +9,7 @@ const User = () => {
   return (
     <div className="container-user">
       <div className="container-userPhoto">
-        <img className="userPhoto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnybAJXEPyyWRFMHN6glsrb7jhJHLUkrHjg&usqp=CAU" alt=""/>
+        <img className="userPhoto" src="img/user.jpg" alt=""/>
       </div>
       <div className="container-userInfo">
         <Link className="userInfo" to=".">{userStorage.user}</Link>

@@ -1,0 +1,43 @@
+.buttonLang-container{
+  position: fixed;
+  z-index: 900;
+  bottom: 10px;
+  right: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  border-radius: 5px;
+  height: 50px;
+  background-color: #00000040;
+  justify-items: center;
+  width: 80px;
+  align-items: center;
+
+  .subtitle{
+    grid-column: 1 / 4;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ecf0f1;
+    font-family: 'Strait', sans-serif;
+    height: 15px;
+  }
+  
+  .buttonLang{
+    width: 20px;
+    height: 20px;
+    background-color: #ecf0f1;
+    color: #3498db;
+    border-radius: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+    border: 0 solid transparent;
+    
+    &-active{
+      background-color: #3498db;
+      color: #ecf0f1;
+    }
+  }
+}

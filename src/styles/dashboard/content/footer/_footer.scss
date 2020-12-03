@@ -2,7 +2,7 @@
 
 $showDesing: false;
 
-$color-text: #bdc3c7;
+$color-text: #3498db;
 
 .container-footer{
     min-height: $heightFooter;
@@ -11,6 +11,7 @@ $color-text: #bdc3c7;
     display: flex;
     flex-direction: column;
     background-color: $bg-footer;
+    background-color: white;
 
     @include style-design(true, relative, 100, "FOOTER", false, #f1c40f7a, #1abc9c7c);
 }
@@ -31,7 +32,7 @@ $color-text: #bdc3c7;
     color: $color-text;
 
     &:hover{
-        color: white;
+        color: #256894;
     }
 }
 

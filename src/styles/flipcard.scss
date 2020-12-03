@@ -9,11 +9,12 @@
     border-bottom: 2px solid #f1c40f;
     text-align: center;
     font-family: 'Strait', sans-serif;
-    color: #3498db;
+    color: #007fd4;
 }
 
 .courses{
     width: 100%;
+    max-width: 50em;
 }
 
 .coursesGrid{
@@ -103,18 +104,11 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                border: 1px solid white;
                 color: white;
-                background-color: rgba(0, 0, 0, 0.2);
                 border-radius: 50%;
-                width: 1.2rem;
-                height: 1.2rem;
-                i{
-                    font-size: 0.8rem;
-                }
-
-                &:hover{
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
+                width: 1.5rem;
+                height: 1.5rem;
             }
         }
     }
@@ -161,6 +155,39 @@
             background-color: #ff770059;
             border: 2px dashed #d35400;
             color: #d35400;
+        }
+    }
+}
+
+.red{
+    background-color: #df4736;
+}
+
+.color{
+    &-red{
+        border-color: white;
+        color: white;
+        background-color: #d12f1c;
+        font-size: 15px;
+
+        &:hover{
+            border-color: white;
+            color: #d12f1c;
+            background-color: white;
+        }
+    }
+
+
+    &-yellow{
+        border-color: white;
+        color: white;
+        background-color: #ee8b09;
+        font-size: 13px;
+
+        &:hover{
+            border-color: white;
+            color: #ee8b09;
+            background-color: #ffdeb4;
         }
     }
 }
