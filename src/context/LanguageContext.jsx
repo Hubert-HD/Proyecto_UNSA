@@ -9,6 +9,7 @@ const LanguageContext = React.createContext();
 
 const languageReducer = (state, {type, language}) => {
     if(type === "SET_LANGUAGE"){
+        localStorage.setItem("language", language)
         return {
             language: language
         }

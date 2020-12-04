@@ -8,9 +8,14 @@ import NotFoundPage from './pages/NotFoundPage';
 
 import { UserContext } from "../context/UserContext";
 import { useEffect } from 'react';
+import { LanguageContext } from '../context/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 const App = () => {  
   const [userStorage, dispatch] = useContext(UserContext);
+  const [languageStorage, dispatchLanguage] = useContext(LanguageContext);
+  const {i18n} = useTranslation()
+  
   useEffect(() => {
     if(localStorage.getItem("user")){
       let user = localStorage.getItem("user")
@@ -18,6 +23,14 @@ const App = () => {
         type: "LOGIN_USER", 
         user: user
       })
+    }
+    if(localStorage.getItem("language")){
+      let language = localStorage.getItem("language")
+      dispatchLanguage({
+        type: "SET_LANGUAGE", 
+        language: language
+      })
+      i18n.changeLanguage(languageStorage.language)
     }
   }, [])
 

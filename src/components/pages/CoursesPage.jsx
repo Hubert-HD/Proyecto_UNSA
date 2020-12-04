@@ -21,7 +21,7 @@ const CoursesPages = () => {
         {
           appStore.courses.map(({id, name, note, credit, period}) => <CourseCard key={id} id={id} period={period} course={name} note={note} credit={credit}/>)
         }
-        <div className="flipCard" onClick={(e) => history.push("/cursos/add")}>
+        <div className="flipCard" onClick={() => history.push("/cursos/add")}>
           <a className="cardCourse cardCourse--btn"><i className="fas fa-plus"></i></a>
         </div>
       </div>
@@ -54,10 +54,10 @@ const CourseCard = ({id, period, course, note, credit}) => {
           <p className="cardInfo__value">{credit}</p>
         </div>
         <div className="menu">
-          <div className="menu__option color-yellow" onClick={(e) => history.push("/cursos/edit/" + id)}>
+          <div className="menu__option color-yellow" onClick={() => history.push("/cursos/edit/" + id)}>
             <i className="fas fa-pen"></i>
           </div>
-          <div className="menu__option color-red" onClick={(e) => history.push("/cursos/delete/" + id)}>
+          <div className="menu__option color-red" onClick={() => history.push("/cursos/delete/" + id)}>
             <i className="far fa-trash-alt"></i> 
           </div>
         </div>

@@ -1,12 +1,18 @@
 import React from "react";
 import { useReducer } from "react";
-import coursesData from "./courses.json";
-import tasksData from "./tasks.json";
 
 const initialState = {
-    courses: coursesData,
-    tasks: tasksData
+    courses: [],
+    tasks: []
 };
+
+if(localStorage.getItem("tasks")){
+    initialState.tasks = JSON.parse(localStorage.getItem("tasks"))
+}
+
+if(localStorage.getItem("courses")){
+    initialState.courses = JSON.parse(localStorage.getItem("courses"))
+}
 
 const AppContext = React.createContext();
 
@@ -31,10 +37,12 @@ const addTask = ({tasks}, {description}) => {
         description: description
     }
     tasks.push(newTask)
+    localStorage.setItem("tasks", JSON.stringify(tasks))
 }
 
 const removeTask = (state, {id}) => {
     state.tasks = state.tasks.filter(task => task.id !== id)
+    localStorage.setItem("tasks", JSON.stringify(state.tasks))
 }
 
 const addCourse = ({courses}, {name, note, credit, period}) => {
@@ -47,6 +55,7 @@ const addCourse = ({courses}, {name, note, credit, period}) => {
         period: period
     }
     courses.push(newCourse)
+    localStorage.setItem("courses", JSON.stringify(courses))
 }
 
 const editCourse = ({courses}, {id, name, note, credit, period}) => {
@@ -62,10 +71,13 @@ const editCourse = ({courses}, {id, name, note, credit, period}) => {
             break
         }
     }
+    localStorage.setItem("courses", JSON.stringify(courses))
 }
 
 const removeCourse = (state, {id}) => {
     state.courses = state.courses.filter(course => course.id !== id)
+    localStorage.setItem("courses", JSON.stringify(state.courses))
+
 }
 
 const AppProvider = ( {children} ) => {

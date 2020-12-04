@@ -3,7 +3,6 @@ import "../../styles/libretaApp.scss";
 import "../../styles/taskPage.scss";
 import { useTranslation } from "react-i18next";
 import { AppContext } from "../../context/AppContext";
-import { useEffect } from "react";
 
 const TasksPage = () => {
     let {t} = useTranslation()
