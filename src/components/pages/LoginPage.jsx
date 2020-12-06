@@ -13,7 +13,7 @@ const LoginPage = () => {
     const {t, i18n} = useTranslation()
     const [languageStorage, dispatchLanguage] = useContext(LanguageContext)
     const [form, setForm] = useState({
-        user: "Anonymous",
+        user: null,
         password: null
     });
 
@@ -28,8 +28,8 @@ const LoginPage = () => {
             type: "LOGIN_USER", 
             user: form.user
         })
-        history.push("/");
-        localStorage.setItem("user", form.user)
+        if(userStorage.user)
+            history.push("/");
     }
 
     const setUser = (user) => {
@@ -38,10 +38,9 @@ const LoginPage = () => {
             password: null
         })
     }
-
-    return (
-        (userStorage.user === "Anonymous")
-        ?
+    
+    if(!userStorage.user){
+        return (
         <div className="container">
             <div className="logo-container" onClick={() => history.push("/")}>
                 <img className="logo-container__logo" src="img/logo.png" alt=""/>
@@ -49,7 +48,7 @@ const LoginPage = () => {
             </div>
             <div className="form-login">
                 <h1 className="form-login__title">{t("login")}</h1>
-                <form className="form-login__form" onSubmit={signin}>
+                <div className="form-login__form">
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-user-graduate"></i>
@@ -70,7 +69,7 @@ const LoginPage = () => {
                         <Link className="olvido" to="/recuperar">{t("login.recuperar")}</Link>
                         <Link className="cuenta" to="/registrar">{t("login.cuenta")}</Link>
                     </div>
-                </form>
+                </div>
             </div>
             <div className="buttonLang-container">
                 <span className="subtitle">{t("language.title")}</span>
@@ -79,7 +78,10 @@ const LoginPage = () => {
                 <button className={`buttonLang ${(languageStorage.language === "pt_BR") ? "buttonLang-active" : ""} `} onClick={() => dispatchLanguage({type: "SET_LANGUAGE", language: "pt_BR"})}>PT</button>
             </div>
         </div>
-        : <Redirect to="/"/>
-    )
+        )
+    }
+    else{
+        return (<Redirect to="/"/>)
+    }
 }
 export default LoginPage

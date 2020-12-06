@@ -38,11 +38,12 @@ const appReducer = (state, {type, data}) => {
     return {...state};
 }
 
-const addTask = ({tasks}, {description}) => {
+const addTask = ({tasks}, {description, user}) => {
     let id = (tasks.length > 0) ? tasks[tasks.length - 1].id + 1 : 1
     let newTask = {
         id:  id,
-        description: description
+        description: description,
+        user: user
     }
     tasks.push(newTask)
     localStorage.setItem("tasks", JSON.stringify(tasks))
@@ -53,14 +54,15 @@ const removeTask = (state, {id}) => {
     localStorage.setItem("tasks", JSON.stringify(state.tasks))
 }
 
-const addCourse = ({courses}, {name, note, credit, period}) => {
+const addCourse = ({courses}, {name, note, credit, period, user}) => {
     let id = (courses.length > 0) ? courses[courses.length - 1].id + 1 : 1
     let newCourse = {
         id:  id,
         name: name,
         note: note,
         credit: credit,
-        period: period
+        period: period,
+        user: user
     }
     courses.push(newCourse)
     localStorage.setItem("courses", JSON.stringify(courses))

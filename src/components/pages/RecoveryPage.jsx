@@ -24,9 +24,8 @@ const LoginPage = () => {
         setForm({user: mail})
     }
 
-    return (
-        (userStorage.user === "Anonymous")
-        ?
+    if(!userStorage.user){
+        return (
         <div className="container">
             <div className="logo-container" onClick={() => history.push("/")}>
                 <img className="logo-container__logo" src="img/logo.png" alt=""/>
@@ -54,8 +53,10 @@ const LoginPage = () => {
                 <button className={`buttonLang ${(languageStorage.language === "en_US") ? "buttonLang-active" : ""} `} onClick={() => dispatchLanguage({type: "SET_LANGUAGE", language: "en_US"})}>EN</button>
                 <button className={`buttonLang ${(languageStorage.language === "pt_BR") ? "buttonLang-active" : ""} `} onClick={() => dispatchLanguage({type: "SET_LANGUAGE", language: "pt_BR"})}>PT</button>
             </div>
-        </div>
-        : <Redirect to="/"/>
-    )
+        </div>)
+    }
+    else{
+        return (<Redirect to="/"/>)
+    }
 }
 export default LoginPage

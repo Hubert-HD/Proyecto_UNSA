@@ -64,7 +64,7 @@ const ReportCardPage = () => {
         </thead>
         <tbody className="tableList__body">
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 1"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.continuing") + " 1"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
@@ -90,7 +90,7 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 1"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.exam") + " 1"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
@@ -116,7 +116,7 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 2"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.continuing") + " 2"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
@@ -142,7 +142,7 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 2"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.exam") + " 2"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
@@ -168,7 +168,7 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.continuing") + " 3"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.continuing") + " 3"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"
@@ -194,7 +194,7 @@ const ReportCardPage = () => {
             </td>
           </tr>
           <tr className="tableList__row tableList__row--data">
-            <td className="tableList__colum tableList__colum--text">{t("calc.exam") + " 3"}</td>
+            <td className="tableList__colum tableList__colum--text reduce">{t("calc.exam") + " 3"}</td>
             <td className="tableList__colum tableList__colum--number nota">
               <input
                 className="calc__input"

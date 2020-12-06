@@ -23,7 +23,6 @@ const Logout = ({icon, cartel, className = ""}) => {
         user: null
     })
     history.push("/");
-    localStorage.removeItem("user")
 }
 
   return (

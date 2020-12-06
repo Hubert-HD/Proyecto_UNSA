@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import "../../styles/flipcard.scss";
 import { useState } from "react";
 import { AppContext } from "../../context/AppContext";
+import { UserContext } from "../../context/UserContext";
 import { useTranslation } from "react-i18next"
 import { Route, useHistory, Switch } from "react-router-dom";
 import ModalAdd from "./CourseAdd";
@@ -11,6 +12,7 @@ import ModalRemove from "./CourseRemove";
 const CoursesPages = () => {
 
   const [appStore] = useContext(AppContext);
+  const [userStore] = useContext(UserContext);
   const history = useHistory();
   let {t} = useTranslation()
   
@@ -19,7 +21,9 @@ const CoursesPages = () => {
       <h2 className="title">{t("link.course")}</h2>
       <div className="coursesGrid">
         {
-          appStore.courses.map(({id, name, note, credit, period}) => <CourseCard key={id} id={id} period={period} course={name} note={note} credit={credit}/>)
+          appStore.courses.map(({id, name, note, credit, period, user}) => {
+            if(userStore.user === user)
+              return (<CourseCard key={id} id={id} period={period} course={name} note={note} credit={credit}/>)})
         }
         <div className="flipCard" onClick={() => history.push("/cursos/add")}>
           <a className="cardCourse cardCourse--btn"><i className="fas fa-plus"></i></a>

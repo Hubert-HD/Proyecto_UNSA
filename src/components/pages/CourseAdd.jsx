@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import "../../styles/flipcard.scss";
 import { useState } from "react";
 import { AppContext } from "../../context/AppContext";
+import { UserContext } from "../../context/UserContext";
 import { useTranslation } from "react-i18next"
 import { useHistory } from "react-router-dom";
 import Selection from "../atoms/Selection";
@@ -10,12 +11,14 @@ import Button from "../atoms/Button";
 const ModalAdd = () => {
 
   let {t} = useTranslation()
+  const [userStore] = useContext(UserContext);
   const periods = ["2017-I","2017-II","2018-I","2018-II","2019-I","2019-II","2020-I","2020-II"]
   const [newCourse, setNewCourse] = useState({
     name: "", 
     note: "", 
     credit: "",
-    period: ""
+    period: "",
+    user: userStore.user
   })
   const [appStorage, dispatch] = useContext(AppContext);
   const history = useHistory();
@@ -26,7 +29,8 @@ const ModalAdd = () => {
       name: "", 
       note: "", 
       credit: "",
-      period: ""
+      period: "",
+      user: userStore.user
     })
   }
 
@@ -38,7 +42,8 @@ const ModalAdd = () => {
           name: newCourse.name,
           note: newCourse.note,
           credit: newCourse.credit,
-          period: newCourse.period
+          period: newCourse.period,
+          user: userStore.user
         }
       })
       history.push("/cursos")

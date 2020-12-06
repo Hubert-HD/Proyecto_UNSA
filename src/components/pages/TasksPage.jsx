@@ -3,15 +3,17 @@ import "../../styles/libretaApp.scss";
 import "../../styles/taskPage.scss";
 import { useTranslation } from "react-i18next";
 import { AppContext } from "../../context/AppContext";
+import { UserContext } from "../../context/UserContext";
 
 const TasksPage = () => {
+    const [userStore] = useContext(UserContext);
     let {t} = useTranslation()
     const [appStore, dispatch] = useContext(AppContext);
     const [newTask, setNewTask] = useState({description: ""})
 
     const save = () => {
         if(newTask.description){
-            dispatch({type: "ADD_TASK", data: {description: newTask.description}})
+            dispatch({type: "ADD_TASK", data: {description: newTask.description, user: userStore.user}})
             setNewTask({description: ""})
         }
     }
@@ -33,21 +35,26 @@ const TasksPage = () => {
 const TaskList = () =>{
     let {t} = useTranslation()
     const [appStore, dispatch] = useContext(AppContext);
+    const [userStore] = useContext(UserContext);
     let taskList = appStore.tasks;
 
-    if(taskList.length > 0){
+    if(taskList.find((task) => task.user === userStore.user)){
         return (<>{
-            taskList.map(({id, description}) => (
-                <li key={id} className="taskContainer">
-                    <p className="taskItem">{description}</p>
-                    <button className="buttonComplete" onClick={() => dispatch({
-                            type: "REMOVE_TASK",
-                            data: {id: id}
-                        })}>
-                        <i className="button__ico far fa-trash-alt"></i>
-                    </button>
-                </li>
-            ))
+            taskList.map(({id, description, user}) => {
+                if(userStore.user === user){
+                    return (
+                        <li key={id} className="taskContainer">
+                            <p className="taskItem">{description}</p>
+                            <button className="buttonComplete" onClick={() => dispatch({
+                                    type: "REMOVE_TASK",
+                                    data: {id: id}
+                                })}>
+                                <i className="button__ico far fa-trash-alt"></i>
+                            </button>
+                        </li>
+                    )
+                }
+            })
         }</>)
     }
     else{

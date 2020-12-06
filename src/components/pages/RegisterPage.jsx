@@ -13,35 +13,29 @@ const LoginPage = () => {
     const {t, i18n} = useTranslation()
     const [languageStorage, dispatchLanguage] = useContext(LanguageContext)
     const [form, setForm] = useState({
-        user: "Anonymous",
-        password: null
+        user: "",
+        mail: "",
+        password1: "",
+        password2: ""
     });
 
     useEffect(() => {
         i18n.changeLanguage(languageStorage.language)
     }, [languageStorage])
-    
 
-    const signin = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: "LOGIN_USER", 
-            user: form.user
-        })
-        history.push("/");
-        localStorage.setItem("user", form.user)
+    const registerUser = () => {
+        if(form.user){
+            if(!userStorage.accounts.find((element) => element === form.user))
+                history.push("/login")
+            dispatch({
+                type: "CREATE_USER", 
+                user: form.user
+            })
+        }
     }
 
-    const setUser = (user) => {
-        setForm({
-            user: user,
-            password: null
-        })
-    }
-
-    return (
-        (userStorage.user === "Anonymous")
-        ?
+    if(!userStorage.user){
+        return (
         <div className="container">
             <div className="logo-container" onClick={() => history.push("/")}>
                 <img className="logo-container__logo" src="img/logo.png" alt=""/>
@@ -49,35 +43,35 @@ const LoginPage = () => {
             </div>
             <div className="form-register">
                 <h1 className="form-register__title">{t("register.title")}</h1>
-                <form className="form-register__form" onSubmit={signin}>
+                <div className="form-register__form">
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-user-graduate"></i>
                         </div>
-                        <input className="form-register__input" type="text" name="curso" placeholder={t("register.user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input className="form-register__input" type="text" name="curso" placeholder={t("register.user")} autoComplete="off" onChange={(e) => setForm({...form, user: e.target.value})}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-envelope"></i>
                         </div>
-                        <input className="form-register__input" type="mail" name="curso" placeholder={t("register.mail")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input className="form-register__input" type="mail" name="curso" placeholder={t("register.mail")} autoComplete="off" onChange={(e) => setForm({...form, mail: e.target.value})}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-lock"></i>
                         </div>
-                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password1")} autoComplete="off" />
+                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password1")} autoComplete="off" onChange={(e) => setForm({...form, password1: e.target.value})}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-lock"></i>
                         </div>
-                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password2")} autoComplete="off" />
+                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password2")} autoComplete="off" onChange={(e) => setForm({...form, password2: e.target.value})}/>
                     </div>
-                    <button className="button button-ajuste" onClick={() => history.push("/login")}>
+                    <button className="button button-ajuste" onClick={registerUser}>
                         <span className="button__text">{t("register.button")}</span>
                     </button>
-                </form>
+                </div>
             </div>
             <div className="buttonLang-container">
                 <span className="subtitle">{t("language.title")}</span>
@@ -86,7 +80,10 @@ const LoginPage = () => {
                 <button className={`buttonLang ${(languageStorage.language === "pt_BR") ? "buttonLang-active" : ""} `} onClick={() => dispatchLanguage({type: "SET_LANGUAGE", language: "pt_BR"})}>PT</button>
             </div>
         </div>
-        : <Redirect to="/"/>
-    )
+        )
+    }
+    else{
+        return (<Redirect to="/"/>)
+    }
 }
 export default LoginPage

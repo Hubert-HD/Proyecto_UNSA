@@ -16,6 +16,29 @@ import TasksPage from "../pages/TasksPage";
 import CurriculumPage from "../pages/CurriculumPage";
 
 const Dashboard = () => {
+
+  useEffect(() => {
+    window.addEventListener("click", handleEvent);
+    return () => {window.removeEventListener("click", handleEvent)}
+  }, []);
+  
+  const handleEvent = (event) => {
+    var content = document.querySelector(".container-content");
+    var sidebar = document.querySelector(".container-sidebar");
+
+    if(window.matchMedia("(max-width: 600px)").matches){
+      //si modo celu
+      event.stopPropagation()
+      if(sidebar && !sidebar.contains(event.target)){
+        if(sidebar.classList.contains("sidebar-expanded")){
+          sidebar.classList.toggle("sidebar-expanded");
+          sidebar.classList.toggle("sidebar-contracted");
+          content.classList.toggle("content-contracted");
+          content.classList.toggle("content-expanded");
+        }
+      }
+    }    
+  }
   
   useEffect(() => {
     // Elementos
@@ -35,6 +58,7 @@ const Dashboard = () => {
     
     const handleMouseClick = (event) => {
       event.preventDefault();
+      event.stopPropagation()
       sidebar.classList.toggle("sidebar-expanded");
       sidebar.classList.toggle("sidebar-contracted");
       content.classList.toggle("content-contracted");

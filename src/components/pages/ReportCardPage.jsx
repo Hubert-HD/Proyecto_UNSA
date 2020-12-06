@@ -2,11 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next"
 import { AppContext } from "../../context/AppContext";
 import "../../styles/libretaApp.scss";
+import { UserContext } from "../../context/UserContext";
 
 const ReportCardPage = () => {
 
   let {t} = useTranslation()
   const [appStore] = useContext(AppContext);
+  const [userStore, dispatch] = useContext(UserContext);
   const [score, setScore] = useState({
     note: 0,
     credit: 0
@@ -21,10 +23,12 @@ const ReportCardPage = () => {
   const calculateTotal = () => {
     let creditTotal = 0;
     let promedio = 0;
-    if(appStore.courses.length > 0){
-      appStore.courses.forEach(({note, credit}) => {
-        creditTotal += parseInt(credit)
-        promedio += parseInt(note) * parseInt(credit)
+    if(appStore.courses.find(course => course.user === userStore.user)){
+      appStore.courses.forEach(({note, credit, user}) => {
+        if(userStore.user === user){
+          creditTotal += parseInt(credit)
+          promedio += parseInt(note) * parseInt(credit)
+        }
       })
       promedio /= creditTotal
       setScore({
@@ -37,8 +41,8 @@ const ReportCardPage = () => {
   const dataFormat = () => {
     let data = []
     let semestres = []
-    appStore.courses.forEach(({period}) => {
-      if(!semestres.includes(period)){
+    appStore.courses.forEach(({period, user}) => {
+      if(userStore.user === user && !semestres.includes(period)){
         semestres.push(period)
       }
     })
@@ -49,14 +53,16 @@ const ReportCardPage = () => {
         courses: []
       })
     })
-    appStore.courses.forEach(({id, name, note, credit, period}) => {
-      let semestre = data.find(semestre => semestre.period === period)
-      semestre.courses.push({
-        id:  id,
-        name: name,
-        note: note,
-        credit: credit
-      })
+    appStore.courses.forEach(({id, name, note, credit, period, user}) => {
+      if(userStore.user === user){
+        let semestre = data.find(semestre => semestre.period === period)
+        semestre.courses.push({
+          id:  id,
+          name: name,
+          note: note,
+          credit: credit
+        })
+      }
     })
     setData(data)
   };

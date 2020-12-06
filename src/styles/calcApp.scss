@@ -1,3 +1,10 @@
 .tableList-container__calc{
-    width: 21em;
+    width: 100%;
+    max-width: 24em;
+}
+
+@media only screen and (max-width: 600px){
+    .reduce{
+        font-size: 19px;
+    }
 }

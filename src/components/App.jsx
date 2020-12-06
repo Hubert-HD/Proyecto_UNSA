@@ -19,13 +19,6 @@ const App = () => {
   const {i18n} = useTranslation()
   
   useEffect(() => {
-    if(localStorage.getItem("user")){
-      let user = localStorage.getItem("user")
-      dispatch({
-        type: "LOGIN_USER", 
-        user: user
-      })
-    }
     if(localStorage.getItem("language")){
       let language = localStorage.getItem("language")
       dispatchLanguage({
@@ -41,7 +34,7 @@ const App = () => {
       <Route path="/registrar" component={ RegisterPage } />
       <Route path="/recuperar" component={ RecoveryPage } />
       <Route path="/login" component={ LoginPage } />
-      <Route path="/" component={ (userStorage.user !== "Anonymous") ? Dashboard : PublicPage } />
+      <Route path="/" component={ (userStorage.user) ? Dashboard : PublicPage } />
       <Route component={ NotFoundPage } />
     </Switch>
     );

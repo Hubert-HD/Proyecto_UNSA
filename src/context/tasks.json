@@ -1,26 +1,32 @@
 [
   {
     "id":  1,
-    "description": "Presentar informe de experiencia de usuario"
+    "description": "Presentar informe de experiencia de usuario",
+    "user": "Alexander" 
   },
   {
     "id":  2,
-    "description": "Elaborar articulo sobre la eduación en pandemia"
+    "description": "Elaborar articulo sobre la eduación en pandemia",
+    "user": "Alexander"
   },
   {
     "id":  3,
-    "description": "Resolver ejercicios de algortimos"
+    "description": "Resolver ejercicios de algortimos",
+    "user": "Alexander"
   },
   {
     "id":  4,
-    "description": "Presentar avance grupal sobre analisis PESTEL"
+    "description": "Presentar avance grupal sobre analisis PESTEL",
+    "user": "Alexander"
   },
   {
     "id":  5,
-    "description": "Ver y analizar el video \"Naturaleza Salvaje\""
+    "description": "Ver y analizar el video \"Naturaleza Salvaje\"",
+    "user": "Alexander"
   },
   {
     "id":  6,
-    "description": "Elaborar un mapa conceptual sobre la investigación"
+    "description": "Elaborar un mapa conceptual sobre la investigación",
+    "user": "Alexander"
   }
 ]
