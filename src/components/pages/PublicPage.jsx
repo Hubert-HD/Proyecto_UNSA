@@ -16,7 +16,10 @@ const PublicPage = () => {
   return (
     <>
       <header className="headerPublic">
-        <h1 className="appText">ToolStudent</h1>
+        <div className="app">
+          <img className="appLogo" src="img/logo.png" alt=""/>
+          <h1 className="appText">ToolStudent</h1>
+        </div>
         <div className="paginas-container">
           <Link className="paginas">{t("home")}</Link>
           <Link className="paginas">{t("contact")}</Link>
@@ -25,6 +28,7 @@ const PublicPage = () => {
         <Link to="./login" className="login">{t("login")}</Link>
       </header>
       <section className="banner">
+        <img className="appLogo" src="img/logo.png" alt=""/>
         <h1 className="nombreApp">ToolStudent</h1>
         <img className="dashPhoto" src="img/dashboard.png" alt="dashboard.png"/>
         <div className="centrado">
@@ -48,9 +52,9 @@ const PublicPage = () => {
       </footer>
       <div className="buttonLang-container">
         <span className="subtitle">{t("language.title")}</span>
-        <button className={`buttonLang ${(languageStorage.language === "es") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "es"})}>ES</button>
-        <button className={`buttonLang ${(languageStorage.language === "en") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "en"})}>EN</button>
-        <button className={`buttonLang ${(languageStorage.language === "jp") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "jp"})}>JP</button>
+        <button className={`buttonLang ${(languageStorage.language === "es_PE") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "es_PE"})}>ES</button>
+        <button className={`buttonLang ${(languageStorage.language === "en_US") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "en_US"})}>EN</button>
+        <button className={`buttonLang ${(languageStorage.language === "pt_BR") ? "buttonLang-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "pt_BR"})}>PT</button>
       </div>
     </>
     )

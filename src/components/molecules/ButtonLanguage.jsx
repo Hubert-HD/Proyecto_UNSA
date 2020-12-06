@@ -15,9 +15,11 @@ const ButtonLanguage = () => {
   return (
     <div className="button-container">
       <span className="subtitle">{t("language.title")}</span>
-      <button className={`buttonLanguage ${(languageStorage.language === "es") ? "buttonLanguage-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "es"})}>ES</button>
-      <button className={`buttonLanguage ${(languageStorage.language === "en") ? "buttonLanguage-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "en"})}>EN</button>
-      <button className={`buttonLanguage ${(languageStorage.language === "jp") ? "buttonLanguage-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "jp"})}>JP</button>
+      <button className={`buttonLanguage ${(languageStorage.language === "es_PE") ? "buttonLanguage-active" : ""} `} 
+      onClick={() => dispatch({type: "SET_LANGUAGE", language: "es_PE"})} 
+      >ES</button>
+      <button className={`buttonLanguage ${(languageStorage.language === "en_US") ? "buttonLanguage-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "en_US"})}>EN</button>
+      <button className={`buttonLanguage ${(languageStorage.language === "pt_BR") ? "buttonLanguage-active" : ""} `} onClick={() => dispatch({type: "SET_LANGUAGE", language: "pt_BR"})}>PT</button>
     </div>
   )
 }

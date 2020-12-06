@@ -22,8 +22,12 @@ $showDesing: false;
     @include style-design(true, relative, 200, "LOGO", false, #f10f0f7a, #1abc707c);
 }
 
-.logoInfo{
+.logo-img{
+    width: 60px;
     padding-left: 1em;
+}
+
+.logoInfo{
     width: 5.5em;
     color: #3498db;
     text-align: center;

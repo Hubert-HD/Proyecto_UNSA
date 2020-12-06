@@ -7,9 +7,19 @@
   background-color: #ecf0f1;
   height: 80px;
 
-  .appText{
-    color: #3498db;
-    font-family: 'Strait', sans-serif;
+  .app{
+    display: flex;
+    align-items: center;
+
+    .appLogo{
+      width: 50px;
+      margin-right: 5px;
+    }
+  
+    .appText{
+      color: #3498db;
+      font-family: 'Strait', sans-serif;
+    }
   }
 
   .login{
@@ -37,6 +47,11 @@
       font-weight: bold;
       text-align: center;
       border-bottom: 1px solid #3498db;
+
+      &:hover{
+        color: #004e83;
+        border-bottom: 1px solid #004e83;
+      }
     }
   }
 
@@ -48,6 +63,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .appLogo{
+    width: 120px;
+  }
 
   .dashPhoto{
     max-width: 55em;

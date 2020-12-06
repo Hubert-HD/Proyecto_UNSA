@@ -11,6 +11,18 @@
   "user": "User",
   "password": "Password",
   "login.button": "Enter",
+  "login.recuperar": "Did you forget your password?",
+  "login.cuenta": "Create an account",
+  "recovery.title": "Reset password",
+  "recovery.text": "Enter the verified email address of your user account and we will send you a link to reset your password.",
+  "recovery.mail": "Email",
+  "recovery.button": "Email",
+  "register.title": "Create account",
+  "register.user": "User",
+  "register.mail": "Email",
+  "register.password1": "Password",
+  "register.password2": "Confirm password",
+  "register.button": "Check in",
   "link.note": "My notes",
   "link.course": "My courses",
   "link.task": "My tasks",
@@ -41,5 +53,6 @@
   "calc.input.note": "Note",
   "calc.input.weight": "Weight",
   "task.input": "New task",
-  "task.subtitle": "List of tasks"
+  "task.subtitle": "List of tasks",
+  "task.void": "(Void)"
 }

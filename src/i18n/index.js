@@ -1,18 +1,18 @@
 import i18n from "i18next"
 import {initReactI18next} from "react-i18next"
-import enTranslation from "./en.json"
-import esTranslation from "./es.json"
-import jpTranslation from "./jp.json"
+import en_US_Translation from "./en_US.json"
+import es_PE_Translation from "./es_PE.json"
+import pt_BR_Translation from "./pt_BR.json"
 
 const resources = {
-  en:{
-    translation: enTranslation
+  en_US:{
+    translation: en_US_Translation
   },
-  es:{
-    translation: esTranslation
+  es_PE:{
+    translation: es_PE_Translation
   },
-  jp:{
-    translation: jpTranslation
+  pt_BR:{
+    translation: pt_BR_Translation
   }
 }
 
@@ -20,7 +20,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "es",
+    lng: "es_PE",
     keySeparator: false,
     interpolation: {
       escapeValue: false

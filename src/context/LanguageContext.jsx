@@ -2,7 +2,7 @@ import React from "react";
 import { useReducer } from "react";
 
 const initialState = {
-    language: "es"
+    language: "es_PE"
 };
 
 const LanguageContext = React.createContext();

@@ -13,30 +13,15 @@ const LoginPage = () => {
     const {t, i18n} = useTranslation()
     const [languageStorage, dispatchLanguage] = useContext(LanguageContext)
     const [form, setForm] = useState({
-        user: "Anonymous",
-        password: null
+        mail: "",
     });
 
     useEffect(() => {
         i18n.changeLanguage(languageStorage.language)
     }, [languageStorage])
     
-
-    const signin = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: "LOGIN_USER", 
-            user: form.user
-        })
-        history.push("/");
-        localStorage.setItem("user", form.user)
-    }
-
-    const setUser = (user) => {
-        setForm({
-            user: user,
-            password: null
-        })
+    const setMail = (mail) => {
+        setForm({user: mail})
     }
 
     return (
@@ -48,28 +33,19 @@ const LoginPage = () => {
                 <h1 className="logo-container__title">ToolStudent</h1>
             </div>
             <div className="form-login">
-                <h1 class="form-login__title">{t("login")}</h1>
-                <form class="form-login__form" onSubmit={signin}>
+                <h1 class="form-login__title">{t("recovery.title")}</h1>
+                <h3 class="form-login__text">{t("recovery.text")}</h3>
+                <form class="form-login__form">
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-user-graduate"></i>
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <input class="form-login__input" type="text" name="curso" placeholder={t("user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input class="form-login__input" type="mail" name="curso" placeholder={t("recovery.mail")} autoComplete="off" onChange={(e) => setMail(e.target.value)}/>
                     </div>
-                    <div className="input_log">
-                        <div className="icon_log">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <input class="form-login__input" type="password" name="curso" placeholder={t("password")} autoComplete="off" />
-                    </div>
-                    <div className="container-button">
-                        <button className={"button"} onClick={signin}>
-                            <i class="fas fa-sign-in-alt"></i>
-                            <span className="button__text">{t("login.button")}</span>
-                        </button>
-                        <Link className="olvido" to="/recuperar">{t("login.recuperar")}</Link>
-                        <Link className="cuenta" to="/registrar">{t("login.cuenta")}</Link>
-                    </div>
+                    
+                    <button className="button button-ajuste" onClick={() => history.push("/login")}>
+                        <span className="button__text">{t("recovery.button")}</span>
+                    </button>
                 </form>
             </div>
             <div className="buttonLang-container">

@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import Dashboard from './templates/Dashboard';
 import LoginPage from './pages/LoginPage';
+import RecoveryPage from './pages/RecoveryPage';
+import RegisterPage from './pages/RegisterPage';
 import PublicPage from './pages/PublicPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -36,6 +38,8 @@ const App = () => {
 
   return (
     <Switch>
+      <Route path="/registrar" component={ RegisterPage } />
+      <Route path="/recuperar" component={ RecoveryPage } />
       <Route path="/login" component={ LoginPage } />
       <Route path="/" component={ (userStorage.user !== "Anonymous") ? Dashboard : PublicPage } />
       <Route component={ NotFoundPage } />

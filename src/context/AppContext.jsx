@@ -1,10 +1,18 @@
 import React from "react";
 import { useReducer } from "react";
 
+import coursesDATA from "./courses.json"
+import tasksDATA from "./tasks.json"
+
 const initialState = {
+    courses: coursesDATA,
+    tasks: tasksDATA
+};
+
+/* const initialState = {
     courses: [],
     tasks: []
-};
+}; */
 
 if(localStorage.getItem("tasks")){
     initialState.tasks = JSON.parse(localStorage.getItem("tasks"))

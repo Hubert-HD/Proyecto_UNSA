@@ -10,7 +10,19 @@
   "subtitle.calc": "Calculadora de notas",
   "user": "Usuario",
   "password": "Contraseña",
-  "login.button": "Entrar",
+  "login.button": "Ingresar",
+  "login.recuperar": "¿Olvidaste tu contraseña?",
+  "login.cuenta": "Crear una cuenta",
+  "recovery.title": "Reiniciar contraseña",
+  "recovery.text": "Ingrese la dirección de correo electrónico verificada de su cuenta de usuario y le enviaremos un enlace para restablecer la contraseña.",
+  "recovery.mail": "Correo electrónico",
+  "recovery.button": "Enviar",
+  "register.title": "Crear cuenta",
+  "register.user": "Usuario",
+  "register.mail": "Correo electrónico",
+  "register.password1": "Contraseña",
+  "register.password2": "Confirmar contraseña",
+  "register.button": "Registrarse",
   "link.note": "Mis notas",
   "link.course": "Mis cursos",
   "link.task": "Mis tareas",
@@ -41,6 +53,7 @@
   "calc.input.note": "Nota",
   "calc.input.weight": "Peso",
   "task.input": "Nueva Tarea",
-  "task.subtitle": "Lista de tareas"
+  "task.subtitle": "Lista de tareas",
+  "task.void": "(Vacio)"
 }
 

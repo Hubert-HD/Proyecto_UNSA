@@ -51,7 +51,13 @@ const ReportCardPage = () => {
       <table className="tableList">
         <thead className="tableList__head">
           <tr className="tableList__row tableList__row--title">
-            <th className="tableList__colum tableList__colum--center">{t("calc.evaluation")}</th>
+            <th className="tableList__colum tableList__colum--center">
+            {
+              
+              t("calc.evaluation")
+              
+            }
+            </th>
             <th className="tableList__colum tableList__colum--center">{t("calc.note")}</th>
             <th className="tableList__colum tableList__colum--center">{t("calc.weight")}</th>
           </tr>

@@ -31,6 +31,7 @@ const TasksPage = () => {
 }
 
 const TaskList = () =>{
+    let {t} = useTranslation()
     const [appStore, dispatch] = useContext(AppContext);
     let taskList = appStore.tasks;
 
@@ -50,7 +51,7 @@ const TaskList = () =>{
         }</>)
     }
     else{
-        return (<h2 className="subtitleTask">(Vacio)</h2>)
+    return (<h2 className="subtitleTask">{t("task.void")}</h2>)
     }
 }
 
