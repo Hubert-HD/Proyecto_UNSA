@@ -48,31 +48,31 @@ const LoginPage = () => {
                 <h1 className="logo-container__title">ToolStudent</h1>
             </div>
             <div className="form-register">
-                <h1 class="form-register__title">{t("register.title")}</h1>
-                <form class="form-register__form" onSubmit={signin}>
+                <h1 className="form-register__title">{t("register.title")}</h1>
+                <form className="form-register__form" onSubmit={signin}>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-user-graduate"></i>
+                            <i className="fas fa-user-graduate"></i>
                         </div>
-                        <input class="form-register__input" type="text" name="curso" placeholder={t("register.user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input className="form-register__input" type="text" name="curso" placeholder={t("register.user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-envelope"></i>
+                            <i className="fas fa-envelope"></i>
                         </div>
-                        <input class="form-register__input" type="mail" name="curso" placeholder={t("register.mail")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input className="form-register__input" type="mail" name="curso" placeholder={t("register.mail")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-lock"></i>
+                            <i className="fas fa-lock"></i>
                         </div>
-                        <input class="form-register__input" type="password" name="curso" placeholder={t("register.password1")} autoComplete="off" />
+                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password1")} autoComplete="off" />
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-lock"></i>
+                            <i className="fas fa-lock"></i>
                         </div>
-                        <input class="form-register__input" type="password" name="curso" placeholder={t("register.password2")} autoComplete="off" />
+                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password2")} autoComplete="off" />
                     </div>
                     <button className="button button-ajuste" onClick={() => history.push("/login")}>
                         <span className="button__text">{t("register.button")}</span>

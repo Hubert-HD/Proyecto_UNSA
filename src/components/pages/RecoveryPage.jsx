@@ -33,14 +33,14 @@ const LoginPage = () => {
                 <h1 className="logo-container__title">ToolStudent</h1>
             </div>
             <div className="form-login">
-                <h1 class="form-login__title">{t("recovery.title")}</h1>
-                <h3 class="form-login__text">{t("recovery.text")}</h3>
-                <form class="form-login__form">
+                <h1 className="form-login__title">{t("recovery.title")}</h1>
+                <h3 className="form-login__text">{t("recovery.text")}</h3>
+                <form className="form-login__form">
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-envelope"></i>
+                            <i className="fas fa-envelope"></i>
                         </div>
-                        <input class="form-login__input" type="mail" name="curso" placeholder={t("recovery.mail")} autoComplete="off" onChange={(e) => setMail(e.target.value)}/>
+                        <input className="form-login__input" type="mail" name="curso" placeholder={t("recovery.mail")} autoComplete="off" onChange={(e) => setMail(e.target.value)}/>
                     </div>
                     
                     <button className="button button-ajuste" onClick={() => history.push("/login")}>

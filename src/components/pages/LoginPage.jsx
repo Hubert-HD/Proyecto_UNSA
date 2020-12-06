@@ -48,23 +48,23 @@ const LoginPage = () => {
                 <h1 className="logo-container__title">ToolStudent</h1>
             </div>
             <div className="form-login">
-                <h1 class="form-login__title">{t("login")}</h1>
-                <form class="form-login__form" onSubmit={signin}>
+                <h1 className="form-login__title">{t("login")}</h1>
+                <form className="form-login__form" onSubmit={signin}>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-user-graduate"></i>
+                            <i className="fas fa-user-graduate"></i>
                         </div>
-                        <input class="form-login__input" type="text" name="curso" placeholder={t("user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
+                        <input className="form-login__input" type="text" name="curso" placeholder={t("user")} autoComplete="off" onChange={(e) => setUser(e.target.value)}/>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
-                            <i class="fas fa-lock"></i>
+                            <i className="fas fa-lock"></i>
                         </div>
-                        <input class="form-login__input" type="password" name="curso" placeholder={t("password")} autoComplete="off" />
+                        <input className="form-login__input" type="password" name="curso" placeholder={t("password")} autoComplete="off" />
                     </div>
                     <div className="container-button">
                         <button className={"button"} onClick={signin}>
-                            <i class="fas fa-sign-in-alt"></i>
+                            <i className="fas fa-sign-in-alt"></i>
                             <span className="button__text">{t("login.button")}</span>
                         </button>
                         <Link className="olvido" to="/recuperar">{t("login.recuperar")}</Link>
