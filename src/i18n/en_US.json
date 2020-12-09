@@ -54,5 +54,11 @@
   "calc.input.weight": "Weight",
   "task.input": "New task",
   "task.subtitle": "List of tasks",
-  "task.void": "(Void)"
+  "task.void": "(Void)",
+  "validate.user": "* The user field is required",
+  "validate.password": "* The password field is required",
+  "validate.email": "* The email field is required",
+  "validate.password.confirm": "* The confirm password field is required",
+  "validate.invalid": "Your username or password is incorrect",
+  "validate.invalid.create": "An account with this user already exists"
 }

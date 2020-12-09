@@ -54,5 +54,11 @@
   "calc.input.weight": "Peso",
   "task.input": "Nova Tarefa",
   "task.subtitle": "Lista de tarefas",
-  "task.void": "(vazio)"
+  "task.void": "(vazio)",
+  "validate.user": "* O campo do usuário é obrigatório",
+  "validate.password": "* O campo da senha é obrigatório",
+  "validate.email": "* O campo do e-mail é obrigatório",
+  "validate.password.confirm": "* O campo de confirmação da senha é obrigatório",
+  "validate.invalid": "Seu nome de usuário ou senha está incorreto",
+  "validate.invalid.create": "Já existe uma conta com este usuário"
 }

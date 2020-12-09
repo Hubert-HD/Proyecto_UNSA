@@ -3,35 +3,37 @@ import { Redirect, useHistory, Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { UserContext } from "../../context/UserContext";
 import { LanguageContext } from "../../context/LanguageContext";
+import { useForm } from "react-hook-form"
 import "../../styles/loginPage.scss";
 import "../../styles/buttonLanguagePublic.scss"
 
-const LoginPage = () => {
+const RegisterPage = () => {
 
+    const {register, errors, handleSubmit} = useForm();
     const [userStorage, dispatch] = useContext(UserContext);
     const history = useHistory();
     const {t, i18n} = useTranslation()
     const [languageStorage, dispatchLanguage] = useContext(LanguageContext)
-    const [form, setForm] = useState({
-        user: "",
-        mail: "",
-        password1: "",
-        password2: ""
-    });
-
+    const [error, setError] = useState(false)
+    
     useEffect(() => {
         i18n.changeLanguage(languageStorage.language)
     }, [languageStorage])
 
-    const registerUser = () => {
-        if(form.user){
-            if(!userStorage.accounts.find((element) => element === form.user))
+    const onSubmit = (data, e) => {
+        const {user} = data
+        e.target.reset()
+        if(user){
+            if(!userStorage.accounts.find((element) => element === user))
                 history.push("/login")
+            else
+                setError(true)
             dispatch({
                 type: "CREATE_USER", 
-                user: form.user
+                user: user
             })
-        }
+            
+        } 
     }
 
     if(!userStorage.user){
@@ -41,38 +43,67 @@ const LoginPage = () => {
                 <img className="logo-container__logo" src="img/logo.png" alt=""/>
                 <h1 className="logo-container__title">ToolStudent</h1>
             </div>
-            <div className="form-register">
+            <form className="form-register" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="form-register__title">{t("register.title")}</h1>
                 <div className="form-register__form">
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-user-graduate"></i>
                         </div>
-                        <input className="form-register__input" type="text" name="curso" placeholder={t("register.user")} autoComplete="off" onChange={(e) => setForm({...form, user: e.target.value})}/>
+                        <input className="form-register__input" type="text" name="user" placeholder={t("register.user")} autoComplete="off"
+                        ref={
+                            register({
+                                required: {value: true, message: true}
+                            })
+                        }
+                        onChange={() => setError(false)}/>
+                        <span className="error">{errors?.user?.message && t("validate.user")}</span>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-envelope"></i>
                         </div>
-                        <input className="form-register__input" type="mail" name="curso" placeholder={t("register.mail")} autoComplete="off" onChange={(e) => setForm({...form, mail: e.target.value})}/>
+                        <input className="form-register__input" type="mail" name="email" placeholder={t("register.mail")} autoComplete="off"
+                        ref={
+                            register({
+                                required: {value: true, message: true}
+                            })
+                        }
+                        onChange={() => setError(false)}/>
+                        <span className="error">{errors?.email?.message && t("validate.email")}</span>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-lock"></i>
                         </div>
-                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password1")} autoComplete="off" onChange={(e) => setForm({...form, password1: e.target.value})}/>
+                        <input className="form-register__input" type="password" name="password1" placeholder={t("register.password1")} autoComplete="off"
+                        ref={
+                            register({
+                                required: {value: true, message: true}
+                            })
+                        }
+                        onChange={() => setError(false)}/>
+                        <span className="error">{errors?.password1?.message && t("validate.password")}</span>
                     </div>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-lock"></i>
                         </div>
-                        <input className="form-register__input" type="password" name="curso" placeholder={t("register.password2")} autoComplete="off" onChange={(e) => setForm({...form, password2: e.target.value})}/>
+                        <input className="form-register__input" type="password" name="password2" placeholder={t("register.password2")} autoComplete="off"
+                        ref={
+                            register({
+                                required: {value: true, message: true}
+                            })
+                        }
+                        onChange={() => setError(false)}/>
+                        <span className="error">{errors?.password2?.message && t("validate.password.confirm")}</span>
                     </div>
-                    <button className="button button-ajuste" onClick={registerUser}>
+                    <span className="errorcreate">{error && t("validate.invalid.create")}</span>
+                    <button className="button button-ajuste">
                         <span className="button__text">{t("register.button")}</span>
                     </button>
                 </div>
-            </div>
+            </form>
             <div className="buttonLang-container">
                 <span className="subtitle">{t("language.title")}</span>
                 <button className={`buttonLang ${(languageStorage.language === "es_PE") ? "buttonLang-active" : ""} `} onClick={() => dispatchLanguage({type: "SET_LANGUAGE", language: "es_PE"})}>ES</button>
@@ -86,4 +117,4 @@ const LoginPage = () => {
         return (<Redirect to="/"/>)
     }
 }
-export default LoginPage
+export default RegisterPage

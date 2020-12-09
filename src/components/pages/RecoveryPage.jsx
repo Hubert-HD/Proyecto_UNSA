@@ -5,23 +5,23 @@ import { UserContext } from "../../context/UserContext";
 import { LanguageContext } from "../../context/LanguageContext";
 import "../../styles/loginPage.scss";
 import "../../styles/buttonLanguagePublic.scss"
+import { useForm } from "react-hook-form";
 
 const LoginPage = () => {
 
+    const {register, errors, handleSubmit} = useForm();
     const [userStorage, dispatch] = useContext(UserContext);
     const history = useHistory();
     const {t, i18n} = useTranslation()
     const [languageStorage, dispatchLanguage] = useContext(LanguageContext)
-    const [form, setForm] = useState({
-        mail: "",
-    });
 
     useEffect(() => {
         i18n.changeLanguage(languageStorage.language)
     }, [languageStorage])
     
-    const setMail = (mail) => {
-        setForm({user: mail})
+    const onSubmit = (data, e) => {
+        e.target.reset()
+        history.push("/login")
     }
 
     if(!userStorage.user){
@@ -34,15 +34,20 @@ const LoginPage = () => {
             <div className="form-login">
                 <h1 className="form-login__title">{t("recovery.title")}</h1>
                 <h3 className="form-login__text">{t("recovery.text")}</h3>
-                <form className="form-login__form">
+                <form className="form-login__form" onSubmit={handleSubmit(onSubmit)}>
                     <div className="input_log">
                         <div className="icon_log">
                             <i className="fas fa-envelope"></i>
                         </div>
-                        <input className="form-login__input" type="mail" name="curso" placeholder={t("recovery.mail")} autoComplete="off" onChange={(e) => setMail(e.target.value)}/>
+                        <input className="form-login__input" type="mail" name="mail" placeholder={t("recovery.mail")} autoComplete="off"
+                        ref={
+                            register({
+                                required: {value: true, message: true}
+                            })
+                        }/>
                     </div>
-                    
-                    <button className="button button-ajuste" onClick={() => history.push("/login")}>
+                    <span className="error">{errors?.mail?.message && t("validate.email")}</span>
+                    <button className="button button-ajuste">
                         <span className="button__text">{t("recovery.button")}</span>
                     </button>
                 </form>
