@@ -10,7 +10,8 @@ const LinkItemList = () => {
     course: history.location.pathname === "/cursos",
     task: history.location.pathname === "/tareas",
     curriculum: history.location.pathname === "/malla-curricular",
-    calculator: history.location.pathname === "/calculadora"
+    calculator: history.location.pathname === "/calculadora",
+    graphic: history.location.pathname === "/estadisticas"
   })
   return (
     <ul className="container-linkList">
@@ -21,11 +22,12 @@ const LinkItemList = () => {
               course: false,
               task: false,
               curriculum: false,
-              calculator: false
+              calculator: false,
+              graphic: false
             })
             history.push("/")
           }}>
-          <i className={"iconLink fas fa-chart-bar"}></i>
+          <i className={"iconLink fas fa-address-book"}></i>
           <span className="cartelLink">{t("link.note")}</span>
         </Link>
       </li>
@@ -36,7 +38,8 @@ const LinkItemList = () => {
               course: true,
               task: false,
               curriculum: false,
-              calculator: false
+              calculator: false,
+              graphic: false
             })
             history.push("/cursos")
             }
@@ -52,7 +55,8 @@ const LinkItemList = () => {
               course: false,
               task: true,
               curriculum: false,
-              calculator: false
+              calculator: false,
+              graphic: false
             })
             history.push("/tareas")
             }
@@ -68,7 +72,8 @@ const LinkItemList = () => {
               course: false,
               task: false,
               curriculum: true,
-              calculator: false
+              calculator: false,
+              graphic: false
             })
             history.push("/malla-curricular")
             }
@@ -84,13 +89,31 @@ const LinkItemList = () => {
               course: false,
               task: false,
               curriculum: false,
-              calculator: true
+              calculator: true,
+              graphic: false
             })
             history.push("/calculadora")
             }
           }>
           <i className={"iconLink fas fa-calculator"}></i>
           <span className="cartelLink">{t("link.calculator")}</span>
+        </Link>
+      </li>
+      <li className={"container-linkItem"}>
+        <Link className={(linkActive.graphic) ? "linkItem linkItem-active" : "linkItem"} onClick={() => {
+            setLinkActive({
+              note: false,
+              course: false,
+              task: false,
+              curriculum: false,
+              calculator: false,
+              graphic: true
+            })
+            history.push("/estadisticas")
+            }
+          }>
+          <i className={"iconLink fas fa-chart-bar"}></i>
+          <span className="cartelLink">{t("link.stats")}</span>
         </Link>
       </li>
     </ul>

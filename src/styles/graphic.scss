@@ -1,0 +1,65 @@
+.grilla{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+    
+    .graph-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    
+        .graph-marco{
+            background-color: white;
+            border-radius: 0.35em;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 1px rgba(0,0,0,0.125), 0 1px 3px rgba(0,0,0,0.2);
+            overflow-x: auto;
+            padding: 8px;
+            position: relative;
+            padding-left: 20px;
+
+            .chart{
+                margin: auto;
+            }
+        }
+    }
+}
+
+.selection-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    .text-selc{
+        color: #3498db;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    @media only screen and (max-width: 600px){
+        grid-template-columns: auto ;
+    }
+}
+
+.textsub{
+    text-align: center;
+    width: 80%;
+    color: #3498db;
+    font-size: 32px;
+    font-family: 'Poor Story', cursive;
+    padding: 8px;
+    background-color: white;
+    border-radius: 0.35em;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0,0,0,0.125), 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.textload{
+    text-align: center;
+    color: #3498db;
+    font-size: 32px;
+    font-family: 'Poor Story', cursive;
+}

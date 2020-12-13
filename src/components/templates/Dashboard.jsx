@@ -7,11 +7,12 @@ import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 
 import { Route, Switch } from "react-router-dom";
+import { AppProvider } from "../../context/AppContext.jsx";
+import GraphicPage from '../pages/GraphicPage.jsx';
 import ReportCardPage from '../pages/ReportCardPage.jsx';
 import NotFoundPage from '../pages/NotFoundPage.jsx';
 import CoursesPages from "../pages/CoursesPage";
 import CalculatorPage from "../pages/CalculatorPage";
-import { AppProvider } from "../../context/AppContext.jsx";
 import TasksPage from "../pages/TasksPage";
 import CurriculumPage from "../pages/CurriculumPage";
 
@@ -86,6 +87,7 @@ const Dashboard = () => {
               <Route path="/tareas" component={ TasksPage } />
               <Route path="/malla-curricular" component={ CurriculumPage } />
               <Route path="/calculadora" component={ CalculatorPage } />
+              <Route path="/estadisticas" exact component={ GraphicPage } />
               <Route component={ NotFoundPage } />
             </Switch> 
           </div>

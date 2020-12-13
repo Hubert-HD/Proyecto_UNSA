@@ -28,6 +28,7 @@
   "link.task": "My tasks",
   "link.curriculum": "Curriculum",
   "link.calculator": "Calculator",
+  "link.stats": "My statistics",
   "logout": "Logout",
   "language.title": "Language",
   "table.title.name": "COURSE NAME", 
@@ -60,5 +61,11 @@
   "validate.email": "* The email field is required",
   "validate.password.confirm": "* The confirm password field is required",
   "validate.invalid": "Your username or password is incorrect",
-  "validate.invalid.create": "An account with this user already exists"
+  "validate.invalid.create": "An account with this user already exists",
+  "graph.selection": "Graph of the semester:",
+  "graph.load": "Loading...",
+  "graph.title": "Semester grades",
+  "graph.void": "I don't select a cycle",
+  "graph.subtitle.point": "Note",
+  "graph.subtitle.courses": "Courses"
 }

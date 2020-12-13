@@ -28,6 +28,7 @@
   "link.task": "Mis tareas",
   "link.curriculum": "Malla Curricular",
   "link.calculator": "Calculadora",
+  "link.stats": "Mis estadisticas",
   "logout": "Cerrar Sessión",
   "language.title": "Idioma",
   "table.title.name": "NOMBRE DEL CURSO", 
@@ -60,6 +61,12 @@
   "validate.email": "* El campo correo electrónico es obligatorio",
   "validate.password.confirm": "* El campo confirmar contraseña es obligatorio",
   "validate.invalid": "Su usuario o contraseña son incorrectas",
-  "validate.invalid.create": "Ya existe una cuenta con este usuario"
+  "validate.invalid.create": "Ya existe una cuenta con este usuario",
+  "graph.selection": "Grafica del semestre:",
+  "graph.load": "Cargando...",
+  "graph.title": "Notas del semestre",
+  "graph.void": "No seleciono un ciclo",
+  "graph.subtitle.point": "Nota",
+  "graph.subtitle.courses": "Cursos"
 }
 
